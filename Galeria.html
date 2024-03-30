@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> <!--Poner acento-->
+        <meta name="viewport" content="width=decive-width, initial-scale=1.0">
+        <title>LamatGen</title>
+        <link rel="icon" href="LamatGEn.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="fonts.css">
+        <link rel="stylesheet" href="fonts1.css">
+    </head>
+    <body>
+        <div class="fondo-boton"><a href="index.html"><img class="logo-barra" src="LamatGEn.png" alt="LamatGen" title="LamatGen" align="right"></a></div>
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <div class="container">
+            <div class="sidebar" id="sidebar">
+                <a href="index.html"><img class="logo" src="LamatGEn.png" alt="LamatGen" title="LamatGen"></a>
+                <img class="FCFM" src="Laboratorio de matemáticas no fondo.png" alt="Laboratorio de matemáticas" title="Laboratorio de matemáticas">
+                <a href="https://fcfm.unach.mx/"><img class="FCFM" src="logo fcfm.png" alt="Facultad de Ciencias en Física y matemáticas" title="Facultad de Ciencias en Física y matemáticas"></a>
+                <ul>
+                    <li><a href="Ejemplos.html">Ejemplos</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <h2>Galeria</h2>
+                <p>Esta es una pequeña galeria con el texto matemático de algunas de la curvas que pueden ser generadas con LamatGen</p>
+                <div class="box-Galeria">
+                    <h2>Atractores</h2>
+                    <a href="Atractor de Dadras.html"><img class="box-Galeria box-atractores" src="Atractor de Dadras.png" alt="Atractor de Dadras" title="Atractor de Dadras"></a>
+                    <a href="Atractor de Lorenz.html"><img class="box-Galeria box-atractores" src="Atractor de Lorenz.png" alt="Atractor de Lorenz" title="Atractor de Lorenz"></a>
+                    <a href="Atractor de Rossler.html"><img class="box-Galeria box-atractores" src="Atractor de Rossler.png" alt="Atractor de Rossler" title="Atractor de Rossler.png"></a>
+                </div>
+                <div class="box-Galeria">
+                    <h2>Hipotrocoide</h2>
+                    <a href="Hipotrocoide.html"><img class="box-Galeria box-atractores" src="Hipotrocoide.png" alt="Hipotrocoide" title="Hipotrocoide"></a>
+                    <a href="Hipocicloide.html"><img class="box-Galeria box-atractores" src="Hipocicloide.png" alt="Hipocicloide" title="Hipocicloide"></a>
+                    <a href="Curva de Lissajous.html"><img class="box-Galeria box-atractores" src="Curva de Lissajous.png" alt="Curva de Lissajous" title="Curva de Lissajous.png"></a>
+            </div>
+        </div>
+        </div>
+        <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+        </script>
+    </body> 
+</html>

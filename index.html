@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> <!--Poner acento-->
+        <meta name="viewport" content="width=decive-width, initial-scale=1.0">
+        <title>LamatGen</title>
+        <link rel="icon" href="LamatGEn.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="fonts.css">
+        <link rel="stylesheet" href="fonts1.css">
+        <script id="MathJax-script" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="fondo-boton"><a href="index.html"><img class="logo-barra" src="LamatGEn.png" alt="LamatGen" title="LamatGen" align="right"></a></div>
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <div class="container">
+            <div class="sidebar" id="sidebar">
+                <a href="index.html"><img class="logo" src="LamatGEn.png" alt="LamatGen" title="LamatGen"></a>
+                <img class="FCFM" src="Laboratorio de matemáticas no fondo.png" alt="Laboratorio de matemáticas" title="Laboratorio de matemáticas">
+                <a href="https://fcfm.unach.mx/"><img class="FCFM" src="logo fcfm.png" alt="Facultad de Ciencias en Física y matemáticas" title="Facultad de Ciencias en Física y matemáticas"></a>
+                <ul id="sidebar-list">
+                    <li><a href="Ejemplos.html">Ejemplos</a></li>
+                    <li><a href="Galeria.html">Galeria</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <h1>LamatGen v1.0</h1>
+                <p class="texto-Arial">LamatGen es un repositorio capaz de generar modelos 3D de curvas y superficies a partir de una parametrización en una variable. Otorga además herramientas de resolución de sistemas de ecuaciones diferenciales e interpolación de datos para crear curvas a partir de modelos de EDO o de un conjunto de pocos datos.
+
+El repositorio está programado en C++ y es de libre acceso para cualquier persona que lo requiera.
+
+Además, LamatGen está optimizado para crear modelos compatibles con laminadores para impresión 3D como Prusa Slicer y Ultimaker Cura.</p>
+                <h2>Instalación</h2>
+                <p class="texto-Arial">Basta con clonar el repositorio desde una terminal a partir de:</p>
+                <div class="main-content box-git">$ git clone https://github.com/LabMat-FCFM-UNACH/lamatgen
+                </div>
+                <p class="texto-Arial">o bien descargar el reposito desde nuestro <a  href="https://github.com/LabMat-FCFM-UNACH/lamatgen">github</a></p>
+        
+                <h2>Novedades de la versión</h2>
+                <p class="texto-Oswald">2/04/24 Versión 1.0</p>
+                <ul>
+                    <li class="texto-Arial">Posibilidad de crear modelos 3D de curvas paramétricas compatibles con Prusa Slicer y Ultimaker Cura (la parametrización necesita partir de una lista de puntos en R3 para funcionar).</li>
+                    <li class="texto-Arial">Añadida una interfaz de usuario para la terminal.</li>
+                    <li class="texto-Arial">Añadida detección de puntos consecutivos que puedan causar irregularidades con la curva.</li>
+                    <li class="texto-Arial">Repositorio disponible en Python y C++. (Buscando utilizar otros lenguajes para el cálculo más eficaz de proyectos, por cuestiones de amigabilidad con el usuario se mantiene el repositorio en versiones para ambos lenguajes).</li>
+                    <li class="texto-Arial">Añadidas advertencias para modelos de más de un millón de triángulos (una cantidad de triángulos exagerada de triángulos puede causar problemas de rendimiento y procesado en equipos de baja potencia).</li>
+                    <li class="texto-Arial">Añadido método de Runge Kutta en cuarto orden para ara resolución de sistemas de ecuaciones diferenciales ordinarias con condiciones iniciales.</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+        </script>
+    </body> 
+</html>
