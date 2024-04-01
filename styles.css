@@ -1,12 +1,13 @@
 h1{
    text-align: left;
    color: #555;
-   width:100%;
-   margin-bottom: 30px;
+   width:500px;
+   margin-bottom: 20px;
    font-family: Oswald;
+   height: 50px;
 }
 
-h2,h3{
+h2,h3,h4{
     text-align: left;
    color: #555;
    width:100%;
@@ -25,7 +26,8 @@ h2,h3{
 }
 
 .texto-Arial{
-   font-family: Arial
+   font-family: Arial;
+   text-align: justify;
 }
 
 .texto-Ubuntu{
@@ -36,10 +38,12 @@ h2,h3{
    font-family: Oswald;
 }
 
+
+
 body {
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
+        font-family: Oswald, sans-serif;
 }
 
 .container {
@@ -52,6 +56,7 @@ body {
         color: #fff; /* Color del texto */
         z-index: 999; /* Asegura que la barra lateral esté por encima del contenido */
     /* Tus otros estilos para la barra lateral */
+        font-family; Oswald; 
 }
 .main-content {
         flex: 1;
@@ -69,6 +74,7 @@ body {
 .sidebar ul li{
         padding: 0px;
         border-bottom: 1px solid #555;
+        height: 30px;
         
 }
 .sidebar ul li:last-child {
@@ -100,6 +106,7 @@ body {
    width:60px;
    margin-left: 24px;
    margin-top: 10px;
+   margin-bottom: 20px;
 }
 
 .box-atractores{
@@ -170,6 +177,7 @@ body {
         width: 100%;
         height: 60px;
         background-color: #eeeeee;
+        z-index: 999;
     }
     
     .logo-barra{
@@ -209,9 +217,10 @@ body {
     }
     
     .sidebar ul li a{
-        color: #000;
+        color: #555;
         text-decoration: none;
         display: block;
+        font-family: Oswald;
     }
     
     .main-content{
