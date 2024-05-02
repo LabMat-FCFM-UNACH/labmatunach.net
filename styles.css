@@ -1,195 +1,348 @@
-h1{
-   text-align: left;
-   color: #555;
-   width:500px;
-   margin-bottom: 20px;
-   font-family: Oswald;
-   height: 50px;
+body{
+  margin: 0;
+  font-family: sans-serif;
 }
 
-h2,h3,h4{
-    text-align: left;
-   color: #555;
-   width:100%;
-   margin-bottom: 20px;
-   font-family: Oswald;
-}
-
-.box-git{
-   font-family: Ubuntu-Mono;
-   text-align: center;
+.nav{
    background-color: #eeeeee;
-   width: 1000px;
-   margin:auto;
-   border-radius: 10px;
-   border : 2px solid #000;
+   width: 100vw;
+   position: sticky;
+   top: 0;
+   z-index: 1;
 }
 
-.texto-Arial{
-   font-family: Arial;
-   text-align: justify;
+header{
+   display: flex;
+   width: 100vw;
+   /*height: 110px;*/
+   background-color: #eeeeee;
+   padding: 0;
+   padding-bottom: 1px;
 }
 
-.texto-Ubuntu{
-   font-family: Ubuntu-Mono;
+.header__logo{
+   width: 50%;
+   margin: 0;
 }
 
-.texto-Oswald{
+h1,h2,h3{
+   margin: 0;
+   padding-top: 15px; 
+   padding-left: 15px;
    font-family: Oswald;
+   color: #555;
+}
+
+h2{
+   padding-top: 0;
+}
+
+.h2__header{
+   border: none;
 }
 
 
-
-body {
-        margin: 0;
-        padding: 0;
-        font-family: Oswald, sans-serif;
+.logo--img{
+   display: flex;
+   background-color: transparent;
+   text-align: end;
+   position: relative;
 }
 
-.container {
-        display: flex;
-        min-height: 100vh;
+.box__img{
+   position: absolute;
+   top: 0;
+   right: 0;
 }
-.sidebar {
-        width: 200px; /* Ancho de la barra lateral */
-        background-color: #eeeeee; /* Color de fondo de la barra lateral */
-        color: #fff; /* Color del texto */
-        z-index: 999; /* Asegura que la barra lateral esté por encima del contenido */
-    /* Tus otros estilos para la barra lateral */
-        font-family; Oswald; 
+   
+.link__logo{
+   width: 100px;
+   color: #000;
+   text-decoration: none;
+   background-color: transparent;
+   margin-right: 20px;
 }
-.main-content {
-        flex: 1;
-        padding: 20px;
+
+.nav__img{
+   width: 85px;
+   margin: 0;
 }
-    /* Estilos para hacer más atractiva la barra lateral */
-.sidebar {
-        padding-top: 20px;
+
+.img--labmat{
+   padding-top: 6px;
 }
-.sidebar ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+
+.img--FCFM{
+   padding-top: 10px;
 }
-.sidebar ul li{
-        padding: 0px;
-        border-bottom: 1px solid #555;
-        height: 30px;
-        
+
+.nav__list{
+   margin: 0;
+   padding: 0;
+   border-top: 4px solid #555;
+   border-bottom: 4px solid #555;
+   text-align: end;
+   height: 52px;
+}   
+
+.nav__item{
+   display: inline-block;
+   margin-right: 15px;
 }
-.sidebar ul li:last-child {
-        border-bottom: none;
+
+.nav__link{
+   color: #000;
+   text-decoration: none;
+   display: inline-block;
+   padding: 10px;
+   background-color: #eeeeee;
 }
-.sidebar ul li a {
-        color: #000;
-        text-decoration: none;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
+
+.nav__link {
+  padding: 1em 2em;
+  /*border: none;*/
+  /*border-radius: 5px;*/
+  font-family: Oswald;
+  font-weight: bold;
+  letter-spacing: 3px;
+  /*background: #DCFFFC;*/
+  text-transform: uppercase;
+  color: #000;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  /*outline: 2px solid #088178;*/
 }
-.sidebar ul li a:hover{
+
+.nav__link:hover {
+  color: #DCFFFC;
+  transform: scale(1);
+  /*outline: 2px solid #088178;*/
+  /*box-shadow: 4px 5px 17px -4px #088178;*/
+}
+
+.nav__link::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #555;
+  transform: skewX(30deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.nav__link:hover::before {
+  width: 250%;
+  height: 100%;
+}
+
+.link--inicio{
+   background-color: #555;
+   color: #fff;
+}
+
+.nav__link:hover{
    background-color: #555;
    color: #eeeeee;
 }
 
-.sidebar ul li:hover a {
-    background-color: #555; /* Cambia este valor para cambiar el color de fondo de los enlaces al pasar el ratón */
+.link--inicio:hover{
+   background-color: #555;
+   color: #eeeeee;
 }
 
-
-.logo{
-   margin-left: 20px; 
-   width: 150px;
+.link__logo:hover{
+   background-color: #eeeeee;
 }
 
-.FCFM{
-   width:60px;
-   margin-left: 24px;
-   margin-top: 10px;
-   margin-bottom: 20px;
+/* Estilos para el menú contextual */
+.context-menu {
+    display: none;
+    position: absolute;
+    background-color: #555;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    width: 218px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 10px
 }
 
-.box-atractores{
-   width: 200px;
-   border-radius: 10px;
-   margin-left: 10px;
-   margin-right: 20px
+.context-menu-item {
+    padding: 5px 20px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    text-decoration: none;
 }
 
-.box-codigo{
-   width: 80%;
-   padding: 6px  12px;
+/* Estilos para el enlace activo */
+.nav__item.active .context-menu {
+    display: block;
+}
+
+/* main */
+.contenedor{
+   margin: 0;
+   padding-top: 20px;
+   display: flex;
+}
+
+.contenedor__box{
+   width: 70vw;
+   margin: 0;
+   padding: 20px;
+}
+
+.box__information{
+   width: 100%;
+   font-size: 22px;
+}
+
+.information--about{
+   width: 100%;
+}
+
+.more__about{
+   display: flex;
+}
+
+.information--bestiario{
+   width: 250px;
+   padding: 0 20px;
+}
+
+.information--museo{
+   width: 250px;
+   padding: 0 20px;
+}
+
+h2,h3{
+   text-align: left;
+   border-bottom: 4px solid #555;
+}
+
+.h2__width{
+   width: 100%;
+}
+
+.h2__information{
    border: none;
-   border-left: 3px solid #666;
-   border-radius: 4px;
-   margin-left: 10px;
+   margin: 0;
+   padding: 0;
 }
 
-/* Estilo para la expresión matemática */
-.mjx-chtml {
-    font-size: 20px; /* Tamaño de fuente */
-    color: blue; /* Color del texto */
-    z-index: -1 /* Asegura que el elemento de LaTeX esté por debajo de la barra lateral */
+.information--empty{
+   height: 49px;
 }
 
-/* Color del texto */
-.texto-azul{
-   color: blue;
+h3{
+   margin: 0;
+   padding: 0;
 }
 
-.texto-verde{
-   color: green;
+.texto__information{
+   text-align: justify;
+   font-size: 16px;
 }
 
-.texto-limon{
-   color: lightgreen;
+.contenedor__noticias{
+   width: 30vw;
+   padding: 20px;
 }
 
-.texto-carne{
-   color:  #e4a310;
+.information--actividades{
+   width: 100%;
 }
 
-.logo-barra {
-    display: none; /* Oculta la imagen por defecto */
+.scroll__img{
+  width: 90%;
+  height: 185px;/*auto*/
+  margin: 10px;
+  border: 3px solid #555;
+  border-radius: 10px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Para mejorar la experiencia en dispositivos móviles */
+}
+
+.actividades__img{
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 100%;
+  height: 100%;/*auto*/
+}
+
+/* Nosotros.html */
+
+.box__nosotros{
+   min-width: 830px;
+}
+
+.box__nosotros{
+   display: flex;
+   flex-wrap: wrap;
+   row-gap: 10px; /* Espacio vertical de 10px */
+   column-gap: 20px; /* Espacio horizontal de 20px */
+   position: relative; 
+}
+
+.box__encargados{
+   width: 45%;
+   margin: 0 10px;
+   margin-top: 15px;
+   position: relative;   
+}
+
+.box__foto{
+   width: 120px;
+   border: 1px solid #555;
+   border-radius: 10px;
+}
+
+.information--nombre{
+   text-align: end;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+.information--titulo{
+   position: absolute;
+   top: 40px;
+   right: 0;
+}
+
+.titulo--salto{
+   top: 70px;
 }
 
 /* Estilos para dispositivos móviles */
+/* nav */
 @media screen and (max-width: 768px) {
-    .sidebar {
-        width: 0; /* Oculta la barra lateral por defecto en dispositivos móviles */
-        overflow: hidden; /* Oculta el contenido que desborda la barra lateral */
-        transition: left 0.3s; /* Agrega una transición suave al cambiar el ancho */
-        position: fixed; /* Fija la barra lateral en la pantalla */
-        top: 0; /* Posiciona la barra lateral en la parte superior */
-        left: -200px; /* Desplaza la barra lateral fuera de la pantalla */
-        height: 100%; /* Establece la altura de la barra lateral para cubrir toda la pantalla */
-        background-color: #eeeeee; /* Color de fondo de la barra lateral */
-        padding-top: 60px; /* Espacio superior para evitar que el contenido quede detrás del encabezado */
-    }
-
-    .sidebar.active {
-        width: 200px; /* Ancho de la barra lateral cuando está activa */
-        left: 0; /* Muestra la barra lateral cuando está activa */
-    }
-     
-    .fondo-boton{
-        position: fixed; /* Fija el botón en la pantalla */
-        width: 100%;
-        height: 60px;
-        background-color: #eeeeee;
-        z-index: 999;
-    }
-    
-    .logo-barra{
-        display: block; /* Muestra la imagen en dispositivos móviles */
-        
-        margin-top: 5px;
-        margin-right: 25px;
-        width: 50px;
-        float: right; /* Alinea la imagen a la izquierda */
-    }
-    
-    .toggle-btn {
+   .nav{
+       width: 0; /* Oculta la barra lateral por defecto en dispositivos móviles */
+       overflow: hidden; /* Oculta el contenido que desborda la barra lateral */
+       transition: left 0.5s; /* Agrega una transición suave al cambiar el ancho */
+       position: fixed; /* Fija la barra lateral en la pantalla */
+       top: 0; /* Posiciona la barra lateral en la parte superior */
+       left: -200px; /* Desplaza la barra lateral fuera de la pantalla */
+       height: 100%; /* Establece la altura de la barra lateral para cubrir toda la pantalla */
+       background-color: #eeeeee; /* Color de fondo de la barra lateral */
+       padding-top: 60px; /* Espacio superior para evitar que el contenido quede detrás del encabezado */
+   }
+   
+   .nav.abierto{
+       width: 220px; /* Ancho de la barra lateral cuando está activa */
+       left: 0; /* Muestra la barra lateral cuando está activa */
+   }
+ 
+   #movil__button{
         display: block;
         position: fixed; /* Fija el botón en la pantalla */
         top: 15px; /* Posiciona el botón en la parte superior */
@@ -198,75 +351,91 @@ body {
         background:transparent;  /*Fondo transparente */
         border: none; /* Sin borde */
         cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-        z-index: 9999; /* Asegura que el botón esté por encima del contenido */
+        z-index: 2; /* Asegura que el botón esté por encima del contenido */
         color: #000000;
     }
     
-    .sidebar ul{
-        padding: 0;
-        margin: 0;
+   .nav__list{
+       width: 100%;
+       padding: 0;
+       margin: 0;
+       text-align: start;
+   }
+   
+   .nav__item{
+       width: 100%;
+   }
+   
+   .nav__link{
+       width: 100%;
+   }
+   
+   .context-menu{
+       z-index: 3;
+   }
+}
+
+/* header */
+
+@media screen and (max-width: 768px){
+   header{
+       padding: 20px;
+       padding-top: 25px;        
+   }
+   
+   .box__img{
+       padding-top: 20px;
+   }
+   
+   .header__logo{
+       width: 45%;
+   }
+   
+   .logo--img{
+       display: block;
+   }
+   
+   .nav__img{
+       width: 105px;
+   }
+}
+
+/* Main */
+
+@media screen and (max-width: 768px){
+   .contenedor{
+       display: block;
+       width: 100vw;
+       
+   }
+   
+   .information--about{
+       padding: 0 10px;
+   }
+   
+   .more__about{
+       display: block ;
+   }
+   
+   
+}
+
+/* Nosotros */
+
+@media screen and (max-width: 768px){
+   .box-nosotros{
+       display: block;
+       position: static;
+       min-width: 400px;
     }
-    
-    .sidebar ul li{
-        padding: 10px 20px;/* Espaciado interno */
-        border-bottom: 1px solid #555; /* Borde inferior */
-    }
-    
-    .sidebar ul li:last-child{
-        border-bottom: none; /* Eliminar borde inferior del último elemento */
-    }
-    
-    .sidebar ul li a{
-        color: #555;
-        text-decoration: none;
-        display: block;
-        font-family: Oswald;
-    }
-    
-    .main-content{
-        padding: 20px ;/* Ajusta el relleno del contenido */ 
-        box-sizing: border-box;
-        padding-left: 20px;
-    }
-    
-    h1{
-        font-size: 24px; /* Tamaño del encabezado h1 */
-        margin-bottom: 15px; /* Margen inferior del encabezado h1 */
-    }
-    
-    h2{
-        font-size: 20px; /* Tamaño del encabezado h2 */
-        margin-bottom: 10px; /* Margen inferior del encabezado h2 */
-    }
-    
-    p{
-        font-size: 16px; /* Tamaño del párrafo */
-        line-height: 1.2; /* Altura de línea del párrafo */
-        width: 100%;
-    }
-    
-    .container{
-        padding-right: 20px;
-        padding-top: 20px;
-        margin-right: -20px;
-    }
-    
-    .box-git{
-        width: 90%; /* Ancho del 90% para adaptarse al tamaño de la pantalla */
-        max-width: 400px; /* Ancho máximo para evitar que el contenido se vuelva demasiado ancho */
-        margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
-    }
-    
-    .box-codigo{
-        width: 500px; /* Ancho del 90% para adaptarse al tamaño de la pantalla */
-        max-width: calc(100% - 40px); /* Ancho máximo para evitar que el contenido se vuelva demasiado ancho */
+    .box__encargados{
+       position: static;
     }
 }
 
 /* Estilos para pantallas más grandes (por ejemplo, computadoras de escritorio) */
 @media screen and (min-width: 769px) {
-    .toggle-btn {
+    #movil__button {
         display: none; /* Oculta el botón de menú en pantallas más grandes */
     }
 }
-

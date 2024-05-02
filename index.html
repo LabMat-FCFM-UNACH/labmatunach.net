@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8"> <!--Poner acento-->
-        <meta name="viewport" content="width=decive-width, initial-scale=1.0">
-        <meta name="OG:TITlE" content="LamatGen">
-    	<meta name="OG:IMAGE" content="LamatGEn.png">
-    	<meta name="OG:description" content="LamatGen es un repositorio capaz de generar modelos 3D de curvas y superficies a partir de una parametrización en una variable. Otorga además herramientas de resolución de sistemas de ecuaciones diferenciales e interpolación de datos para crear curvas a partir de modelos de EDO o de un conjunto de pocos datos.">
-    	<meta name="keywords" content="Atractror, c++, programa, Fabian">
-        <title>LamatGen</title>
-        <link rel="icon" href="LamatGEn.png" type="image/png">
+        <meta charset="UTF-8">
+        <title>Laboratorio de matemáticas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <link rel="icon" href="Laboratorio de matemáticas no fondo.png" type="image/png">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="fonts.css">
-        <link rel="stylesheet" href="fonts1.css">
-        <script id="MathJax-script" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
-        <div class="fondo-boton"><a href="index.html"><img class="logo-barra" src="LamatGEn.png" alt="LamatGen" title="LamatGen" align="right"></a></div>
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-        <div class="container">
-            <div class="sidebar" id="sidebar">
-                <a href="index.html"><img class="logo" src="LamatGEn.png" alt="LamatGen" title="LamatGen"></a>
-                <img class="FCFM" src="Laboratorio de matemáticas no fondo.png" alt="Laboratorio de matemáticas" title="Laboratorio de matemáticas">
-                <a href="https://fcfm.unach.mx/"><img class="FCFM" src="logo fcfm.png" alt="Facultad de Ciencias en Física y matemáticas" title="Facultad de Ciencias en Física y matemáticas"></a>
-                <ul id="sidebar-list">
-                    <li><a href="Ejemplos.html">Ejemplos</a></li>
-                    <li><a href="Galeria.html">Galeria</a></li>
-                    <li><a href="Contacto.html">Contacto</a></li>
-                </ul>
+        <header>
+            <div class="header__logo">
+                <h1>LABORATORIO DE MATEMÁTICAS</h1>
+                <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
             </div>
-            <div class="main-content">
-                <h1>LamatGen v1.1</h1>
-                <p class="texto-Arial">LamatGen es un repositorio capaz de generar modelos 3D de curvas y superficies a partir de una parametrización en una variable. Otorga además herramientas de resolución de sistemas de ecuaciones diferenciales e interpolación de datos para crear curvas a partir de modelos de EDO o de un conjunto de pocos datos.
-
-El repositorio está programado en C++ y es de libre acceso para cualquier persona que lo requiera.
-
-Además, LamatGen está optimizado para crear modelos compatibles con laminadores para impresión 3D como Prusa Slicer y Ultimaker Cura.</p>
-                <h2>Instalación</h2>
-                <p class="texto-Arial">Basta con clonar el repositorio desde una terminal a partir de:</p>
-                <div class="main-content box-git">$ git clone https://github.com/LabMat-FCFM-UNACH/lamatgen
+            <div class="header__logo logo--img">
+                <div class="box__img">
+                    <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png"></a>  
+                    <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png"></a>
                 </div>
-                <p class="texto-Arial">o bien descargar el reposito desde nuestro <a  href="https://github.com/LabMat-FCFM-UNACH/lamatgen">github</a></p>
-        
-                <h2>Novedades de la versión</h2>
-                <p class="texto-Oswald">5/04/24 Versión 1.1</p>
-                <ul>
-                    <li class="texto-Arial"> Optimizado el proceso de creación del archivo disminuyendo el tiempo de creación del archivo alrededor del 50%.
-                    <li class="texto-Arial"> Optimizado el proceso de búsqueda de puntos consecutivos.
-                </ul>
-                <p class="texto-Oswald">2/04/24 Versión 1.0</p>
-                <ul>
-                    <li class="texto-Arial">Posibilidad de crear modelos 3D de curvas paramétricas compatibles con Prusa Slicer y Ultimaker Cura (la parametrización necesita partir de una lista de puntos en R3 para funcionar).</li>
-                    <li class="texto-Arial">Añadida una interfaz de usuario para la terminal.</li>
-                    <li class="texto-Arial">Añadida detección de puntos consecutivos que puedan causar irregularidades con la curva.</li>
-                    <li class="texto-Arial">Repositorio disponible en Python y C++. (Buscando utilizar otros lenguajes para el cálculo más eficaz de proyectos, por cuestiones de amigabilidad con el usuario se mantiene el repositorio en versiones para ambos lenguajes).</li>
-                    <li class="texto-Arial">Añadidas advertencias para modelos de más de un millón de triángulos (una cantidad de triángulos exagerada de triángulos puede causar problemas de rendimiento y procesado en equipos de baja potencia).</li>
-                    <li class="texto-Arial">Añadido método de Runge Kutta en cuarto orden para ara resolución de sistemas de ecuaciones diferenciales ordinarias con condiciones iniciales.</li>
-                </ul>
+            </div>
+            <button id="movil__button" onclick="toggleSidebar()">☰</button>
+        </header>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link link--inicio">Inico</a></li>
+                <li class="nav__item">
+                    <a href="Nosotros.html" class="nav__link">Nosotros</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Nuestro trabajo</a>
+                    <div class="context-menu">
+                        <a href="LAMATGEN_3/index.html" class="context-menu-item">LamatGen</a>
+                        <!--<a href="#" class="context-menu-item">Opción 2</a>
+                        <a href="#" class="context-menu-item">Opción 3</a>-->
+                    </div>
+                </li>
+                <li class="nav__item"><a href="Contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor">
+            <div class="contenedor__box">
+                <div class="box__information information--about">
+                    <h2>¿Quiénes somos?</h2>
+                    <p class="texto__information">El Laboratorio de Matemáticas de la Universidad Autónoma de Chiapas es un grupo conformado 
+                    por investigadores y 
+                    estudiantes pertenecientes a la Facultad de Ciencias en Física y Matemáticas de dicha universidad, enfocado a la creación 
+                    de material didáctico, divulgación de las matemáticas y creación de software científico.</p>
+                </div>
+                <div class="more__about">
+                    <div class="box__information information--bestiario">
+                        <h2 class="h2__information">Nuestro trabajo</h2>
+                        <h3>LamatGen v1.1</h3>
+                        <p class="texto__information">LamatGen es una librería para C++ y Python que permite la creación de modelos obj de 
+                        curvas paramétricas optimizadas para impresión 3D.</p>
+                    </div>
+                    <div class="box__information information--bestiario">
+                        <div class="h2__information information--empty"></div>
+                        <h3>Bestiario matemático</h3>
+                        <p class="texto__information">Bestiario matemático es una wiki que describe exóticos objetos matemáticos, su historia 
+                        y sus características, enfocando su narración de forma divulgativa</p>
+                    </div>
+                    <div class="box__information information--museo">
+                        <div class="h2__information information--empty"></div>
+                        <h3>Museo de Matemáticas</h3>
+                        <p class="texto__information">El museo de matemáticas es una colección de más de 40 objetos matemáticos traídos a la 
+                    realidad a partir de impresión 3D enfocada a la divulgación de las matemáticas de forma más didáctica y tangible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor__noticias"> 
+                <div class="box__information information--actividades">
+                    <h2>Actividades</h2>
+                    <div class="scroll__img">
+                        <img class="actividades__img" src="scroll__img/Atractor de Lorenz.png" alt="Descripción de la imagen 1">
+                        <img class="actividades__img" src="scroll__img/domain.png" alt="Descripción de la imagen 2">
+                    </div> 
+                </div>
+                <div class="box__information information--efemerides">
+                    <h2> Efemérides</h2>
+                    <div id="fecha_actual"></div>
+                </div>
             </div>
         </div>
-        <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("active");
-        }
-        </script>
-    </body> 
+        <script src="script.js"></script>
+    </body>
 </html>

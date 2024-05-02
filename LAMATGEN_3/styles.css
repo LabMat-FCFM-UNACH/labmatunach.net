@@ -1,0 +1,283 @@
+h1{
+   text-align: left;
+   color: #555;
+   width:500px;
+   margin-bottom: 20px;
+   font-family: Oswald;
+   height: 50px;
+}
+
+h2,h3,h4{
+   text-align: left;
+   color: #555;
+   width:100%;
+   margin-bottom: 20px;
+   font-family: Oswald;
+}
+
+.box-git{
+   font-family: Ubuntu-Mono;
+   text-align: center;
+   background-color: #eeeeee;
+   width: 1000px;
+   margin:auto;
+   border-radius: 10px;
+   border : 2px solid #000;
+}
+
+.texto-Arial{
+   font-family: Arial;
+   text-align: justify;
+}
+
+.texto-Ubuntu{
+   font-family: Ubuntu-Mono;
+}
+
+.texto-Oswald{
+   font-family: Oswald;
+}
+
+
+
+body {
+        margin: 0;
+        padding: 0;
+        font-family: Oswald, sans-serif;
+}
+
+.container {
+        display: flex;
+        min-height: 100vh;
+}
+
+.container-images {
+        display: flex;
+        min-height: 100px;
+}
+
+.main-content-images {
+        flex: 1;
+        padding-left: 20px;
+}
+
+.sidebar {
+        width: 200px; /* Ancho de la barra lateral */
+        background-color: #eeeeee; /* Color de fondo de la barra lateral */
+        color: #fff; /* Color del texto */
+        z-index: 999; /* Asegura que la barra lateral esté por encima del contenido */
+    /* Tus otros estilos para la barra lateral */
+        font-family; Oswald; 
+}
+.main-content {
+        flex: 1;
+        padding: 20px;
+}
+    /* Estilos para hacer más atractiva la barra lateral */
+.sidebar {
+        padding-top: 20px;
+}
+.sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+.sidebar ul li{
+        padding: 0px;
+        border-bottom: 1px solid #555;
+        height: 30px;
+        
+}
+.sidebar ul li:last-child {
+        border-bottom: none;
+}
+.sidebar ul li a {
+        color: #000;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+}
+.sidebar ul li a:hover{
+   background-color: #555;
+   color: #eeeeee;
+}
+
+.sidebar ul li:hover a {
+    background-color: #555; /* Cambia este valor para cambiar el color de fondo de los enlaces al pasar el ratón */
+}
+
+
+.logo{
+   margin-left: 20px; 
+   width: 150px;
+}
+
+.FCFM{
+   width:60px;
+   margin-left: 24px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+}
+
+.box-atractores{
+   width: 200px;
+   border-radius: 10px;
+   margin-left: 10px;
+   margin-right: 20px
+}
+
+.box-codigo{
+   width: 80%;
+   padding: 6px  12px;
+   border: none;
+   border-left: 3px solid #666;
+   border-radius: 4px;
+   margin-left: 10px;
+}
+
+/* Estilo para la expresión matemática */
+.mjx-chtml {
+    font-size: 20px; /* Tamaño de fuente */
+    color: blue; /* Color del texto */
+    z-index: -1 /* Asegura que el elemento de LaTeX esté por debajo de la barra lateral */
+}
+
+/* Color del texto */
+.texto-azul{
+   color: blue;
+}
+
+.texto-verde{
+   color: green;
+}
+
+.texto-limon{
+   color: lightgreen;
+}
+
+.texto-carne{
+   color:  #e4a310;
+}
+
+.logo-barra {
+    display: none; /* Oculta la imagen por defecto */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 0; /* Oculta la barra lateral por defecto en dispositivos móviles */
+        overflow: hidden; /* Oculta el contenido que desborda la barra lateral */
+        transition: left 0.3s; /* Agrega una transición suave al cambiar el ancho */
+        position: fixed; /* Fija la barra lateral en la pantalla */
+        top: 0; /* Posiciona la barra lateral en la parte superior */
+        left: -200px; /* Desplaza la barra lateral fuera de la pantalla */
+        height: 100%; /* Establece la altura de la barra lateral para cubrir toda la pantalla */
+        background-color: #eeeeee; /* Color de fondo de la barra lateral */
+        padding-top: 60px; /* Espacio superior para evitar que el contenido quede detrás del encabezado */
+    }
+
+    .sidebar.active {
+        width: 200px; /* Ancho de la barra lateral cuando está activa */
+        left: 0; /* Muestra la barra lateral cuando está activa */
+    }
+     
+    .fondo-boton{
+        position: fixed; /* Fija la barra en la pantalla */
+        width: 100%;
+        height: 60px;
+        background-color: #eeeeee;
+        z-index: 999;
+    }
+    
+    .logo-barra{
+        display: block; /* Muestra la imagen en dispositivos móviles */
+        
+        margin-top: 5px;
+        margin-right: 25px;
+        width: 50px;
+        float: right; /* Alinea la imagen a la izquierda */
+    }
+    
+    .toggle-btn {
+        display: block;
+        position: fixed; /* Fija el botón en la pantalla */
+        top: 15px; /* Posiciona el botón en la parte superior */
+        left: 20px; /* Posiciona el botón en el lado izquierdo */
+        font-size: 24px; /* Tamaño del ícono */
+        background:transparent;  /*Fondo transparente */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        z-index: 9999; /* Asegura que el botón esté por encima del contenido */
+        color: #000000;
+    }
+    
+    .sidebar ul{
+        padding: 0;
+        margin: 0;
+    }
+    
+    .sidebar ul li{
+        padding: 10px 20px;/* Espaciado interno */
+        border-bottom: 1px solid #555; /* Borde inferior */
+    }
+    
+    .sidebar ul li:last-child{
+        border-bottom: none; /* Eliminar borde inferior del último elemento */
+    }
+    
+    .sidebar ul li a{
+        color: #555;
+        text-decoration: none;
+        display: block;
+        font-family: Oswald;
+    }
+    
+    .main-content{
+        padding: 20px ;/* Ajusta el relleno del contenido */ 
+        box-sizing: border-box;
+        padding-left: 20px;
+    }
+    
+    h1{
+        font-size: 24px; /* Tamaño del encabezado h1 */
+        margin-bottom: 15px; /* Margen inferior del encabezado h1 */
+    }
+    
+    h2{
+        font-size: 20px; /* Tamaño del encabezado h2 */
+        margin-bottom: 10px; /* Margen inferior del encabezado h2 */
+    }
+    
+    p{
+        font-size: 16px; /* Tamaño del párrafo */
+        line-height: 1.2; /* Altura de línea del párrafo */
+        width: 100%;
+    }
+    
+    .container{
+        padding-right: 20px;
+        padding-top: 20px;
+        margin-right: -20px;
+    }
+    
+    .box-git{
+        width: 90%; /* Ancho del 90% para adaptarse al tamaño de la pantalla */
+        max-width: 400px; /* Ancho máximo para evitar que el contenido se vuelva demasiado ancho */
+        margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
+    }
+    
+    .box-codigo{
+        width: 500px; /* Ancho del 90% para adaptarse al tamaño de la pantalla */
+        max-width: calc(100% - 40px); /* Ancho máximo para evitar que el contenido se vuelva demasiado ancho */
+    }
+}
+
+/* Estilos para pantallas más grandes (por ejemplo, computadoras de escritorio) */
+@media screen and (min-width: 769px) {
+    .toggle-btn {
+        display: none; /* Oculta el botón de menú en pantallas más grandes */
+    }
+}
+
