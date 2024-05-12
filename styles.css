@@ -3,6 +3,12 @@ body{
   font-family: sans-serif;
 }
 
+p{
+   font-family: Verdana, sans-serif;
+   text-align: justify; 
+   font-size: 13px;
+}
+
 .nav{
    background-color: #eeeeee;
    width: 100vw;
@@ -203,16 +209,21 @@ h2{
    font-size: 22px;
 }
 
-.information--about{
-   width: 100%;
-}
 
 .more__about{
    display: flex;
+   flex-wrap: wrap;
+   row-gap: 10px; /* Espacio vertical de 10px */
+   column-gap: 0px; /* Espacio horizontal de 20px */
+}
+
+.information--about{
+   width: 90%;
+   padding: 0 20px;
 }
 
 .information--bestiario{
-   width: 250px;
+   width: 220px;
    padding: 0 20px;
 }
 
@@ -249,7 +260,7 @@ h3{
    text-align: justify;
    font-size: 16px;
 }
-
+/* Actividades */
 .contenedor__noticias{
    width: 30vw;
    padding: 20px;
@@ -278,6 +289,33 @@ h3{
   height: 100%;/*auto*/
 }
 
+.scroll__indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.scroll__indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scroll__indicator.active {
+    background-color: #555;
+}
+
+
+/* Actividades novil */
+
+.contenedor__actividades{
+   padding-left: 40px;
+}
+
 /* Nosotros.html */
 
 .box__nosotros{
@@ -300,7 +338,7 @@ h3{
 }
 
 .box__foto{
-   width: 120px;
+   width: 150px;
    border: 1px solid #555;
    border-radius: 10px;
 }
@@ -323,35 +361,35 @@ h3{
 }
 
 /* Estilos para dispositivos móviles */
-/* nav */
+/* Nav */
 @media screen and (max-width: 768px) {
    .nav{
-       width: 0; /* Oculta la barra lateral por defecto en dispositivos móviles */
-       overflow: hidden; /* Oculta el contenido que desborda la barra lateral */
-       transition: left 0.5s; /* Agrega una transición suave al cambiar el ancho */
-       position: fixed; /* Fija la barra lateral en la pantalla */
-       top: 0; /* Posiciona la barra lateral en la parte superior */
-       left: -200px; /* Desplaza la barra lateral fuera de la pantalla */
-       height: 100%; /* Establece la altura de la barra lateral para cubrir toda la pantalla */
-       background-color: #eeeeee; /* Color de fondo de la barra lateral */
-       padding-top: 60px; /* Espacio superior para evitar que el contenido quede detrás del encabezado */
+       width: 0;
+       overflow: hidden;
+       transition: left 0.5s;
+       position: fixed;
+       top: 0;
+       left: -200px;
+       height: 100%;
+       background-color: #eeeeee;
+       padding-top: 60px;
    }
    
    .nav.abierto{
-       width: 220px; /* Ancho de la barra lateral cuando está activa */
-       left: 0; /* Muestra la barra lateral cuando está activa */
+       width: 220px;
+       left: 0;
    }
  
    #movil__button{
         display: block;
-        position: fixed; /* Fija el botón en la pantalla */
-        top: 15px; /* Posiciona el botón en la parte superior */
-        left: 20px; /* Posiciona el botón en el lado izquierdo */
-        font-size: 24px; /* Tamaño del ícono */
-        background:transparent;  /*Fondo transparente */
-        border: none; /* Sin borde */
-        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-        z-index: 2; /* Asegura que el botón esté por encima del contenido */
+        position: fixed;
+        top: 15px;
+        left: 20px;
+        font-size: 24px;
+        background:transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2;
         color: #000000;
     }
     
@@ -373,14 +411,17 @@ h3{
    .context-menu{
        z-index: 3;
    }
+   .item--compu{
+       display: none;
+   }
 }
 
-/* header */
-
+/* Header */
 @media screen and (max-width: 768px){
    header{
        padding: 20px;
-       padding-top: 25px;        
+       padding-top: 25px;
+       padding-left: 40px;
    }
    
    .box__img{
@@ -401,41 +442,106 @@ h3{
 }
 
 /* Main */
-
 @media screen and (max-width: 768px){
    .contenedor{
        display: block;
        width: 100vw;
-       
-   }
-   
-   .information--about{
-       padding: 0 10px;
+       padding-left: 30px;
    }
    
    .more__about{
        display: block ;
    }
-   
-   
 }
 
-/* Nosotros */
+/* Nosotros.html */
+@media screen and (max-width: 768px) {
+  .box__nosotros {
+    display: block;
+    min-width: 90vw;
+  }
 
-@media screen and (max-width: 768px){
-   .box-nosotros{
-       display: block;
-       position: static;
-       min-width: 400px;
-    }
-    .box__encargados{
-       position: static;
-    }
+  .contenedor__box{
+       width: 80vw;
+  }
+
+  .box__encargados {
+    width: 90%;
+    margin: 0 10px;
+    margin-top: 15px;
+    position: relative;
+  }
+
+  .box__foto {
+    width: 150px;
+    border: 1px solid #555;
+    border-radius: 10px;
+  }
+
+  .information--nombre,
+  .information--titulo {
+    text-align: end;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .information--titulo {
+    top: 40px;
+  }
+
+  .titulo--salto {
+    top: 70px;
+  }
+  
+  p{
+    font-size: 16px; 
+  }
 }
 
-/* Estilos para pantallas más grandes (por ejemplo, computadoras de escritorio) */
+/* Actividades.html */
+@media screen and (max-width: 768px) {
+  .contenedor__noticias {
+    width: 100vw;
+    padding: 20px;
+  }
+
+  .box__information {
+    width: 100%;
+  }
+
+  .scroll__img {
+    width: 90%;
+    height: auto;
+    margin: 10px;
+    border: 3px solid #555;
+    border-radius: 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .actividades__img {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contenedor__noticias{
+       display: none;
+  }
+}
+
 @media screen and (min-width: 769px) {
-    #movil__button {
-        display: none; /* Oculta el botón de menú en pantallas más grandes */
-    }
+   #movil__button{
+       display: none;
+   }
+   .item--movil{
+       display: none;
+   }
 }
+
+
+

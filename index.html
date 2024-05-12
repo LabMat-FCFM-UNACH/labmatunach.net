@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Laboratorio de matemáticas</title>
-        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
         <link rel="icon" href="Laboratorio de matemáticas no fondo.png" type="image/png">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="fonts.css">
@@ -24,23 +24,31 @@
         </header>
         <nav class="nav">
             <ul class="nav__list">
-                <li class="nav__item"><a href="#" class="nav__link link--inicio">Inico</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link link--inicio">Inicio</a></li>
                 <li class="nav__item">
                     <a href="Nosotros.html" class="nav__link">Nosotros</a>
                 </li>
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Nuestro trabajo</a>
+                <li class="nav__item item--compu">
+                    <div  class="nav__link">Nuestro trabajo</div>
                     <div class="context-menu">
                         <a href="LAMATGEN_3/index.html" class="context-menu-item">LamatGen</a>
                         <!--<a href="#" class="context-menu-item">Opción 2</a>
                         <a href="#" class="context-menu-item">Opción 3</a>-->
                     </div>
                 </li>
+                <li class="nav__item item--movil">
+                    <details class="nav__link">
+                        <summary >Nuestro trabajo</summary>
+                        <a href="LAMATGEN_3/index.html" class="nav__link" class="context-menu-item">LamatGen</a>
+                    </details>
+                </li>
                 <li class="nav__item"><a href="Contacto.html" class="nav__link">Contacto</a></li>
+                <li class="nav__item item--movil"><a href="Actividades.html" class="nav__link">Actividades</a></li>
             </ul>
         </nav>
         <div class="contenedor">
             <div class="contenedor__box">
+                <div class="more__about">
                 <div class="box__information information--about">
                     <h2>¿Quiénes somos?</h2>
                     <p class="texto__information">El Laboratorio de Matemáticas de la Universidad Autónoma de Chiapas es un grupo conformado 
@@ -48,7 +56,7 @@
                     estudiantes pertenecientes a la Facultad de Ciencias en Física y Matemáticas de dicha universidad, enfocado a la creación 
                     de material didáctico, divulgación de las matemáticas y creación de software científico.</p>
                 </div>
-                <div class="more__about">
+                <!--<div class="more__about">-->
                     <div class="box__information information--bestiario">
                         <h2 class="h2__information">Nuestro trabajo</h2>
                         <h3>LamatGen v1.1</h3>
@@ -76,6 +84,7 @@
                         <img class="actividades__img" src="scroll__img/Atractor de Lorenz.png" alt="Descripción de la imagen 1">
                         <img class="actividades__img" src="scroll__img/domain.png" alt="Descripción de la imagen 2">
                     </div> 
+                    <div class="scroll__indicators"></div>
                 </div>
                 <div class="box__information information--efemerides">
                     <h2> Efemérides</h2>

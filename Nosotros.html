@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Laboratorio de matemáticas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
         <link rel="icon" href="Laboratorio de matemáticas no fondo.png" type="image/png">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="fonts.css">
@@ -25,21 +26,28 @@
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.html" class="nav__link">Inico</a></li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link link--inicio">Nosotros</a>
+                    <a href="Nosotros.html" class="nav__link link--inicio">Nosotros</a>
                 </li>
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Nuestro trabajo</a>
+                <li class="nav__item item--compu">
+                    <div class="nav__link">Nuestro trabajo</div>
                     <div class="context-menu">
-                        <a href="#" class="context-menu-item">LamatGen</a>
+                        <a href="LAMATGEN_3/index.html" class="context-menu-item">LamatGen</a>
                         <!--<a href="#" class="context-menu-item">Opción 2</a>
                         <a href="#" class="context-menu-item">Opción 3</a>-->
                     </div>
                 </li>
+                <li class="nav__item item--movil">
+                    <details class="nav__link">
+                        <summary >Nuestro trabajo</summary>
+                        <a href="LAMATGEN_3/index.html" class="nav__link" class="context-menu-item">LamatGen</a>
+                    </details>
+                </li>
                 <li class="nav__item"><a href="Contacto.html" class="nav__link">Contacto</a></li>
+                <li class="nav__item item--movil"><a href="Actividades.html" class="nav__link">Actividades</a></li>
             </ul>
         </nav>
         <div class="contenedor">
-            <div class="contenedor__box box__nosotros">
+            <div class="contenedor__box ">
                 <h2 class="h2__width">Encargados del laboratorio</h2>
                 <div class="box__nosotros">
                     <div class="box__encargados">
@@ -52,7 +60,7 @@
                         <img class="box__foto" src="Fotos/DraEddaly.jpg">
                         <h2 class="h2__information information--nombre">Eddaly Guerra Vasco</h2>
                         <h3 class="h2__information information--titulo">Doctora en matemáticas</h3>
-                        <p style="text-align: justify;; font-size: 13px;">Estudió la Licenciatura en Matemáticas en la Benemérita Universidad Autónoma de Puebla (BUAP). Una vez finalizados sus estudios de 
+                        <p>Estudió la Licenciatura en Matemáticas en la Benemérita Universidad Autónoma de Puebla (BUAP). Una vez finalizados sus estudios de 
                             licenciatura, se trasladó a la Ciudad de México para realizar sus estudios de maestría y doctorado en la Universidad Nacional Autónoma de 
                             México (UNAM). Durante sus estudios de doctorado, realizó una estancia en el Instituto Superior Técnico de Portugal. Ha llevado a cabo varios 
                             artículos de investigación y ha participado como ponente en distintos eventos de talla nacional e internacional, incluyendo una sesión satélite 
@@ -105,6 +113,7 @@
                         <img class="actividades__img" src="scroll__img/Atractor de Lorenz.png" alt="Descripción de la imagen 1">
                         <img class="actividades__img" src="scroll__img/domain.png" alt="Descripción de la imagen 2">
                     </div> 
+                    <div class="scroll__indicators"></div>
                 </div>
                 <h2> Efemérides</h2>
                 <div class="box__information information--efemerides">
