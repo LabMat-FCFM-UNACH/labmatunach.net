@@ -10,18 +10,23 @@
     </head>
     <body>
         <header>
-            <div class="header__logo">
-                <h1>LABORATORIO DE MATEMÁTICAS</h1>
-                <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
-            </div>
-            <div class="header__logo logo--img">
-                <div class="box__img">
-                    <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png"></a>  
-                    <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png"></a>
+            <div class="header__compu">
+                <div class="header__logo">
+                    <h1>LABORATORIO DE MATEMÁTICAS</h1>
+                    <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
+               </div>
+                <div class="header__logo logo--img">
+                    <div class="box__img">
+                        <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png"></a>  
+                        <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png"></a>
+                    </div>
                 </div>
             </div>
-            <button id="movil__button" onclick="toggleSidebar()">☰</button>
+            <div class="header__movil">
+                <a class="header__enlace" href="index.html"><img class="header__img" src="header__movil.jpeg"></a>
+            </div>
         </header>
+        <button id="movil__button" onclick="toggleSidebar()">☰</button>
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.html" class="nav__link link--inicio">Inicio</a></li>
@@ -29,12 +34,12 @@
                     <a href="Nosotros.html" class="nav__link">Nosotros</a>
                 </li>
                 <li class="nav__item item--compu">
-                    <div  class="nav__link">Nuestro trabajo</div>
-                    <div class="context-menu">
-                        <a href="LAMATGEN_3/index.html" class="context-menu-item">LamatGen</a>
-                        <!--<a href="#" class="context-menu-item">Opción 2</a>
-                        <a href="#" class="context-menu-item">Opción 3</a>-->
-                    </div>
+                    <div  class="nav__link link--menu">Nuestro trabajo</div>
+                        <div class="context-menu-content">
+                            <a href="LAMATGEN_3/index.html">LamatGen</a>
+                            <!--<a href="#">Opción 2</a>
+                            <a href="#">Opción 3</a>-->
+                        </div>
                 </li>
                 <li class="nav__item item--movil">
                     <details class="nav__link">
@@ -69,12 +74,12 @@
                         <p class="texto__information">Bestiario matemático es una wiki que describe exóticos objetos matemáticos, su historia 
                         y sus características, enfocando su narración de forma divulgativa</p>
                     </div>
-                    <div class="box__information information--museo">
+                    <!--<div class="box__information information--museo">
                         <div class="h2__information information--empty"></div>
                         <h3>Museo de Matemáticas</h3>
                         <p class="texto__information">El museo de matemáticas es una colección de más de 40 objetos matemáticos traídos a la 
                     realidad a partir de impresión 3D enfocada a la divulgación de las matemáticas de forma más didáctica y tangible</p>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="contenedor__noticias"> 

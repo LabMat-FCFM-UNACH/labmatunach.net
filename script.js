@@ -1,4 +1,4 @@
-//Menu 
+/*//Menu 
 document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav__item');
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.style.display = 'none';
         });
     });
-});
+});*/
 
 
 // Crear un nuevo objeto Date que represente la fecha y hora actuales
@@ -132,4 +132,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+/* Email */
+
+/* Email */
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Verificar que todos los campos estén llenos
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        /*const tipoUsuario = document.getElementById('tipoUsuario').value;*/
+        /*const referente = document.getElementById('referente').value;*/
+        const mensaje = document.getElementById('mensaje').value;
+
+        if (!nombre || !email || !mensaje) {
+            alert('Por favor, completa todos los campos antes de enviar el formulario.');
+            return;
+        }
+
+        // Verificar que el checkbox de términos y condiciones esté marcado
+        /*if (!document.getElementById('acepto').checked) {
+            alert('Debes aceptar los términos y condiciones para enviar el formulario.');
+            return;
+        }*/
+
+        // Capturar los datos del formulario
+        const formData = {
+            nombre: nombre,
+            email: email,
+            /*tipoUsuario: tipoUsuario,*/
+            /*referente: referente,*/
+            mensaje: mensaje
+        };
+
+        // Enviar los datos a través de EmailJS
+        emailjs.send('service_illu4u1', 'template_6uir7wk', formData)
+            .then(function (response) {
+                alert('Mensaje enviado con éxito!');
+                document.getElementById('contact-form').reset(); // Limpiar el formulario después del envío
+            }, function (error) {
+                alert('Error al enviar el mensaje: ' + JSON.stringify(error));
+            });
+    });
+});
+
+
+
+/*'service_illu4u1', 'template_6uir7wk' */
 

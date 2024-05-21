@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+   <head>
         <meta charset="UTF-8">
         <title>Laboratorio de matemáticas</title>
         <meta name="viewport" content="width=device-width, initial-scale=0.7">
@@ -10,31 +10,36 @@
     </head>
     <body>
         <header>
-            <div class="header__logo">
-                <h1>LABORATORIO DE MATEMÁTICAS</h1>
-                <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
-            </div>
-            <div class="header__logo logo--img">
-                <div class="box__img">
-                    <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png"></a>
-                    <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png"></a>
+            <div class="header__compu">
+                <div class="header__logo">
+                    <h1>LABORATORIO DE MATEMÁTICAS</h1>
+                    <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
+               </div>
+                <div class="header__logo logo--img">
+                    <div class="box__img">
+                        <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png"></a>  
+                        <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png"></a>
+                    </div>
                 </div>
             </div>
-            <button id="movil__button" onclick="toggleSidebar()">☰</button>
+            <div class="header__movil">
+                <a class="header__enlace" href="index.html"><img class="header__img" src="header__movil.jpeg"></a>
+            </div>
         </header>
+        <button id="movil__button" onclick="toggleSidebar()">☰</button>
         <nav class="nav">
             <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link">Inico</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
                 <li class="nav__item">
                     <a href="Nosotros.html" class="nav__link link--inicio">Nosotros</a>
                 </li>
                 <li class="nav__item item--compu">
-                    <div class="nav__link">Nuestro trabajo</div>
-                    <div class="context-menu">
-                        <a href="LAMATGEN_3/index.html" class="context-menu-item">LamatGen</a>
-                        <!--<a href="#" class="context-menu-item">Opción 2</a>
-                        <a href="#" class="context-menu-item">Opción 3</a>-->
-                    </div>
+                    <div  class="nav__link link--menu">Nuestro trabajo</div>
+                        <div class="context-menu-content">
+                            <a href="LAMATGEN_3/index.html">LamatGen</a>
+                            <!--<a href="#">Opción 2</a>
+                            <a href="#">Opción 3</a>-->
+                        </div>
                 </li>
                 <li class="nav__item item--movil">
                     <details class="nav__link">
@@ -45,9 +50,9 @@
                 <li class="nav__item"><a href="Contacto.html" class="nav__link">Contacto</a></li>
                 <li class="nav__item item--movil"><a href="Actividades.html" class="nav__link">Actividades</a></li>
             </ul>
-        </nav>
+        </nav> 
         <div class="contenedor">
-            <div class="contenedor__box ">
+            <div class="contenedor__box">
                 <h2 class="h2__width">Encargados del laboratorio</h2>
                 <div class="box__nosotros">
                     <div class="box__encargados">
