@@ -3,38 +3,64 @@
     <head>
         <meta charset="UTF-8">
         <title>Laboratorio de matemáticas</title>
-        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="Laboratorio de matemáticas no fondo.png" type="image/png">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="fonts.css">
     </head>
     <body>
         <header>
-            <div class="header__logo">
-                <h1>LABORATORIO DE MATEMÁTICAS</h1>
-                <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
-            </div>
-            <div class="header__logo logo--img">
-                <div class="box__img">
-                    <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png"></a>
-                    <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png"></a>
+            <div class="header__compu">
+                <div class="header__logo">
+                    <h1>LABORATORIO DE MATEMÁTICAS</h1>
+                    <h2 class="h2__header">Univesidad Autónoma de Chiapas</h2>
+               </div>
+                <div class="header__logo logo--img">
+                    <div class="box__img">
+                        <a class="link__logo" href="index.html"><img class="nav__img img--labmat" src="Laboratorio de matemáticas no fondo.png" alt="Laboratorio de matemáticas"></a>  
+                        <a class="link__logo" href="https://www.fcfm.unach.mx/"><img class="nav__img img--FCFM" src="logo fcfm.png" alt="FCFM"></a>
+                    </div>
                 </div>
             </div>
-            <button id="movil__button" onclick="toggleSidebar()">☰</button>
+            <div class="header__movil">
+                <a class="header__enlace" href="index.html"><img class="header__img" src="header__movil.jpeg" alt="Laboratorio de matemáticas"></a>
+            </div>
         </header>
+        <button id="movil__button" onclick="toggleSidebar()">☰</button>
         <nav class="nav">
             <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link">Inico</a></li>
                 <li class="nav__item">
-                    <a href="Nosotros.html" class="nav__link">Nosotros</a>
+                    <a href="index.html" class="nav__link">
+                        <svg style="margin-right:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="15" height="15">
+                            <path d="M32 2L2 32h10v30h16V42h8v20h16V32h10z" fill="#eeeeee" stroke="#555" stroke-width="2"/>
+                        </svg>
+                        Inicio
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="Nosotros.html" class="nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" fill="#EEEEEE" stroke="#000" viewBox="0 0 16 16">
+                            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z"/>
+                        </svg>
+                        Nosotros
+                    </a>
                 </li>
                 <li class="nav__item item--compu">
-                    <div class="nav__link">Nuestro trabajo</div>
-                    <div class="context-menu">
-                        <a href="LAMATGEN_3/index.html" class="context-menu-item">LamatGen</a>
-                        <!--<a href="#" class="context-menu-item">Opción 2</a>
-                        <a href="#" class="context-menu-item">Opción 3</a>-->
+                    <div  class="nav__link link--menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" fill="#000000" viewBox="0 0 16 16">
+                            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                        </svg>
+                        Nuestro trabajo
                     </div>
+                        <div class="context-menu-content">
+                            <a href="LAMATGEN_3/index.html">
+                                LamatGen
+                            </a>
+                            <!--<a href="#">Opción 2</a>
+                            <a href="#">Opción 3</a>-->
+                        </div>
                 </li>
                 <li class="nav__item item--movil">
                     <details class="nav__link">
@@ -42,8 +68,22 @@
                         <a href="LAMATGEN_3/index.html" class="nav__link" class="context-menu-item">LamatGen</a>
                     </details>
                 </li>
-                <li class="nav__item"><a class="nav__link link--inicio" href="Contacto.html">Contacto</a></li>
-                <li class="nav__item item--movil"><a href="Actividades.html" class="nav__link">Actividades</a></li>
+                <li class="nav__item">
+                    <a href="Contacto.html" class="nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" fill="#EEEEEE" stroke="#000" stroke-width="0.8" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                        </svg>
+                        Contacto
+                    </a>
+                </li>
+                <li class="nav__item item--movil">
+                    <a href="Actividades.html" class="nav__link link--inicio">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" fill="#EEEEEE" stroke="#000" viewBox="0 0 16 16">
+                            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5"/>
+                        </svg>
+                        Actividades
+                    </a>
+                </li>
             </ul>
         </nav>
         <div class="contenedor__actividades"> 
