@@ -435,11 +435,11 @@ label{
 
 .input__submit {
   width: 40%;
-  color: #090909;
+  color: #eeeeee;
   padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #e8e8e8;
+  background: #555;
   cursor: pointer;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
@@ -447,8 +447,13 @@ label{
 }
 
 .input__submit:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+   color: #666;
+   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.link--submit:hover{
+   background-color: #eeeeee;
+   color: #555
 }
 
 label:has(input:invalid), input:invalid{
