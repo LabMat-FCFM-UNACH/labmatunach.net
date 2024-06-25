@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Líneas con Límite de Puntos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header__logos">
+        <a><img class="header__img" src="Logos/headerCR.png"></a>
+    </header>
+    <header class="header__titulos">
+        <ul class="header__lista">
+            <li>UNACH</li>
+            <li>Laboratorio</li>
+            <li>FCFM</li>
+        </ul>
+    </header>
+    <main>
+        <div class="box__graficas graficas--left">
+            <h2>Gráfica de rayos cósmicos</h2>
+            <canvas id="chartCanvas" width="400" height="200"></canvas>
+        </div>
+        <div class="box__graficas graficas--right">
+            <h2>Gráfica de rayos cósmicos</h2>
+            <canvas id="chartCanvas1" width="300" height="100"></canvas>
+            <h2>Gráfica de rayos cósmicos</h2>
+            <canvas id="chartCanvas2" width="300" height="100"></canvas>
+        </div>
+    </main>
+    <script>
+        // Variables compartidas
+        let randomNum1 = 3;
+        let randomNum2 = 3;
+        let randomNum3 = 3;
+        const maxDataPoints = 30; // Límite máximo de puntos en los gráficos
+
+        // Función para generar números aleatorios
+        function generateRandomNumber(randomNum) {
+            randomNum += Math.random() * 2 - 1;
+            return randomNum.toFixed(2);
+        }
+
+        // Configurar y actualizar el gráfico de líneas
+        function createChart(ctx, label, randomNumRef) {
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: label,
+                        data: [],
+                        fill: false,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            function updateChart() {
+                const newNumber = generateRandomNumber(randomNumRef);
+                randomNumRef = parseFloat(newNumber);
+                const currentData = chart.data.datasets[0].data;
+
+                // Añadir nuevos datos al inicio del array
+                chart.data.datasets[0].data = [parseFloat(newNumber), ...currentData.slice(0, maxDataPoints - 1)];
+                const labelsCount = chart.data.labels.length;
+                const newLabels = [`Punto ${labelsCount + 1}`];
+                chart.data.labels = [...newLabels, ...chart.data.labels.slice(0, maxDataPoints - 1)];
+
+                chart.update();
+            }
+
+            setInterval(updateChart, 1500);
+            updateChart();
+
+            return chart;
+        }
+
+        // Crear los tres gráficos de líneas
+        const ctx1 = document.getElementById('chartCanvas').getContext('2d');
+        createChart(ctx1, 'Valores Aleatorios 1', randomNum1);
+
+        const ctx2 = document.getElementById('chartCanvas1').getContext('2d');
+        createChart(ctx2, 'Valores Aleatorios 2', randomNum2);
+
+        const ctx3 = document.getElementById('chartCanvas2').getContext('2d');
+        createChart(ctx3, 'Valores Aleatorios 3', randomNum3);
+    </script>
+</body>
+</html>
+
