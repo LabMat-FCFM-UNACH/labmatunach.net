@@ -102,6 +102,16 @@ header div a img{
    }
 }
 
+@media screen and (max-width: 500px){
+   nav .header__movil .logos .fcfm__movil{
+       width: 60px;
+   }
+   
+   nav .header__movil .logos .labmat__movil{
+       width: 250px;
+   }
+}
+
 /*NAV*/
 
 nav{
@@ -392,10 +402,11 @@ nav .navegador li .menu__contextual-1 li a{
    display: flex;
    flex-wrap: wrap;
    gap: 20px;
+   justify-content: center;
 }
 
 .personal__descripciones{
-   max-width: 100%;
+   max-width: 40vw;
    flex-grow: 1;
    flex-basis: min-content;
    min-width: 250px;
@@ -412,13 +423,21 @@ nav .navegador li .menu__contextual-1 li a{
    width: 200px;
 }
 
+.personal__descripciones p{
+   text-align: justify;
+}
+
 .text-end{
    text-align: end;
 }
 
 @media screen and (max-width: 950px){
    .personal__descripciones .box__presentacion img{
-     width: 150px;
+       width: 150px;
+   }
+   
+   .personal__descripciones{
+       max-width: 100%
    }
 }
 
@@ -510,6 +529,7 @@ label:has(input:invalid), input:invalid{
 @media screen and (max-width: 950px){
    .main__contacto{
        max-width: 100vw;
+       height: 75vh;
    }
 }
 
