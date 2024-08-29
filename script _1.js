@@ -11,16 +11,23 @@ const navegador = document.querySelector(".navegador");
 const open = document.getElementById("open");
 const close = document.getElementById("close");
 
-// Selecciona los elementos del slider
-let slider = document.querySelector('.slider .list');
-let items = document.querySelectorAll('.slider .list .item');
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let dots = document.querySelectorAll('.slider .dots li');
-console.log("Script inline cargado");
+//Eventos
+const boxGaleria1 = document.querySelector(".box__galeria1");
+const eventosDisplay1 = document.querySelector(".eventos__display1");
+const boxGaleria2 = document.querySelector(".box__galeria2");
+const eventosDisplay2 = document.querySelector(".eventos__display2");
+const boxGaleria3 = document.querySelector(".box__galeria3");
+const eventosDisplay3 = document.querySelector(".eventos__display3");
+const boxGaleria4 = document.querySelector(".box__galeria4");
+const eventosDisplay4 = document.querySelector(".eventos__display4");
+const boxGaleria5 = document.querySelector(".box__galeria5");
+const eventosDisplay5 = document.querySelector(".eventos__display5");
+const boxGaleria6 = document.querySelector(".box__galeria6");
+const eventosDisplay6 = document.querySelector(".eventos__display6");
+
 // Función para manejar el menú contextual
 function manejarMenu(navItem, menuContextual, flecha) {
-    let isSmallScreen = window.innerWidth <= 855;
+    let isSmallScreen = window.innerWidth <= 950;
 
     function mostrarMenu() {
         menuContextual.classList.add("block");
@@ -41,10 +48,10 @@ function manejarMenu(navItem, menuContextual, flecha) {
             navItem.removeEventListener("mouseout", mouseoutHandlerNavItem);
             menuContextual.removeEventListener("mouseout", mouseoutHandlerMenuContextual);
             navItem.addEventListener("click", toggleMenu);
-            document.addEventListener("click", clickOutsideHandler);
+            //document.addEventListener("click", clickOutsideHandler);
         } else {
             navItem.removeEventListener("click", toggleMenu);
-            document.removeEventListener("click", clickOutsideHandler);
+            //document.removeEventListener("click", clickOutsideHandler);
             navItem.addEventListener("mouseover", mostrarMenu);
             menuContextual.addEventListener("mouseover", mostrarMenu);
             navItem.addEventListener("mouseout", mouseoutHandlerNavItem);
@@ -61,11 +68,11 @@ function manejarMenu(navItem, menuContextual, flecha) {
         }
     }
 
-    function clickOutsideHandler(event) {
+    /*function clickOutsideHandler(event) {
         if (!navItem.contains(event.target) && !menuContextual.contains(event.target) && !slider.contains(event.target)) {
             ocultarMenu();
         }
-    }
+    }*/
 
     function mouseoutHandlerNavItem(event) {
         if (!menuContextual.contains(event.relatedTarget)) {
@@ -81,7 +88,7 @@ function manejarMenu(navItem, menuContextual, flecha) {
 
     agregarEventos();
     window.addEventListener("resize", () => {
-        isSmallScreen = window.innerWidth <= 855;
+        isSmallScreen = window.innerWidth <= 950;
         agregarEventos();
     });
 }
@@ -99,59 +106,8 @@ close.addEventListener("click", () => {
     navegador.classList.toggle("dezplazar");
 });
 
-// Slider
-let lengthItems = items.length - 1;
-let active = 0;
 
-// Función para evitar que el clic en los botones del slider y los puntos (dots) cierre el menú
-function stopPropagation(event) {
-    event.stopPropagation();
-}
-
-next.onclick = function (event) {
-    stopPropagation(event);
-    active = (active + 1) <= lengthItems ? active + 1 : 0;
-    reloadSlider();
-}
-
-prev.onclick = function (event) {
-    stopPropagation(event);
-    active = (active - 1) >= 0 ? active - 1 : lengthItems;
-    reloadSlider();
-}
-
-let refreshInterval = setInterval(() => { next.click() }, 3000);
-
-function reloadSlider() {
-    slider.style.left = -items[active].offsetLeft + 'px';
-    let last_active_dot = document.querySelector('.slider .dots li.active');
-    if (last_active_dot) last_active_dot.classList.remove('active');
-    dots[active].classList.add('active');
-
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => { next.click() }, 3000);
-}
-
-dots.forEach((li, key) => {
-    li.addEventListener('click', (event) => {
-        stopPropagation(event);
-        active = key;
-        reloadSlider();
-    });
-});
-
-window.onresize = function () {
-    reloadSlider();
-};
-
-// Fecha actual
-var fechaActual = new Date();
-var dia = fechaActual.getDate();
-var mes = fechaActual.getMonth() + 1;
-var año = fechaActual.getFullYear();
-var fechaFormateada = dia + "/" + mes + "/" + año;
-document.getElementById("fecha_actual").innerHTML = "La fecha actual es: " + fechaFormateada;
-
+//Email
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -189,3 +145,65 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+//Eventos
+
+boxGaleria1.addEventListener("mouseover",()=>{
+   eventosDisplay1.classList.toggle("info");
+});
+
+if(window.innerWidth <= 950){
+   boxGaleria1.addEventListener("click",()=>{
+       eventosDisplay1.classList.toggle("info");
+   })
+};
+
+boxGaleria1.addEventListener("mouseout",()=>{
+   eventosDisplay1.classList.toggle("info");
+});
+
+boxGaleria2.addEventListener("mouseover",()=>{
+   eventosDisplay2.classList.toggle("info");
+});
+
+if(window.innerWidth <= 950){
+   boxGaleria2.addEventListener("click",()=>{
+       eventosDisplay2.classList.toggle("info");
+   })
+};
+
+boxGaleria2.addEventListener("mouseout",()=>{
+   eventosDisplay2.classList.toggle("info");
+});
+
+/*boxGaleria3.addEventListener("mouseover",()=>{
+   eventosDisplay3.classList.toggle("info");
+});
+
+boxGaleria3.addEventListener("mouseout",()=>{
+   eventosDisplay3.classList.toggle("info");
+});
+
+boxGaleria4.addEventListener("mouseover",()=>{
+   eventosDisplay4.classList.toggle("info");
+});
+
+boxGaleria4.addEventListener("mouseout",()=>{
+   eventosDisplay4.classList.toggle("info");
+});
+
+boxGaleria5.addEventListener("mouseover",()=>{
+   eventosDisplay5.classList.toggle("info");
+});
+
+boxGaleria5.addEventListener("mouseout",()=>{
+   eventosDisplay5.classList.toggle("info");
+});
+
+boxGaleria6.addEventListener("mouseover",()=>{
+   eventosDisplay6.classList.toggle("info");
+});
+
+boxGaleria6.addEventListener("mouseout",()=>{
+   eventosDisplay6.classList.toggle("info");
+});*/
