@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //Eventos
 
 boxGaleria1.addEventListener("mouseover",()=>{
-   eventosDisplay1.classList.toggle("info");
+   eventosDisplay1.classList.add("info");
 });
 
 if(window.innerWidth <= 950){
@@ -159,11 +159,11 @@ if(window.innerWidth <= 950){
 };
 
 boxGaleria1.addEventListener("mouseout",()=>{
-   eventosDisplay1.classList.toggle("info");
+   eventosDisplay1.classList.remove("info");
 });
 
 boxGaleria2.addEventListener("mouseover",()=>{
-   eventosDisplay2.classList.toggle("info");
+   eventosDisplay2.classList.add("info");
 });
 
 if(window.innerWidth <= 950){
@@ -173,18 +173,24 @@ if(window.innerWidth <= 950){
 };
 
 boxGaleria2.addEventListener("mouseout",()=>{
-   eventosDisplay2.classList.toggle("info");
+   eventosDisplay2.classList.remove("info");
 });
 
-/*boxGaleria3.addEventListener("mouseover",()=>{
-   eventosDisplay3.classList.toggle("info");
+boxGaleria3.addEventListener("mouseover",()=>{
+   eventosDisplay3.classList.add("info");
 });
 
 boxGaleria3.addEventListener("mouseout",()=>{
-   eventosDisplay3.classList.toggle("info");
+   eventosDisplay3.classList.remove("info");
 });
 
-boxGaleria4.addEventListener("mouseover",()=>{
+if(window.innerWidth <= 950){
+   boxGaleria3.addEventListener("click",()=>{
+       eventosDisplay3.classList.toggle("info");
+   })
+};
+
+/*boxGaleria4.addEventListener("mouseover",()=>{
    eventosDisplay4.classList.toggle("info");
 });
 
