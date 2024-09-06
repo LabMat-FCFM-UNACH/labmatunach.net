@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LamatGen</title>
+    <link rel="icon" href="LamatIcon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="open-menu">
+        <ion-icon id="open-menu" name="menu-outline"></ion-icon>
+    </div>
+    <div id="elemento" class="nav__lateral">
+        <div class="close-menu">
+            <ion-icon name="close-circle-outline"></ion-icon>
+        </div>
+        <div>
+            <div class="nombre__pagina">
+                <ion-icon id="bestiario" name="caret-back-outline"></ion-icon>
+                <span>LamatGen</span>
+            </div>
+        </div>
+        <div class="box--labmat">
+            <div class="logo--labmat"><a href="index.html"><img src="LamatGEn.png"></a></div>
+            <div class="logo--labmat"><a href="../index.html"><img src="Laboratorio de matemáticas no fondo.png"></a></div>
+            <div class="logo--labmat"><a href="https://www.fcfm.unach.mx/"><img src="logo fcfm.png"></a></div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a id="pagina" href="index.html">
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ejemplo.html">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <span>Ejemplo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="galeria.html">
+                        <ion-icon name="image-outline"></ion-icon>
+                        <span>Galeria</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        <ion-icon name="body-outline"></ion-icon>
+                        <span>Contacto</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <div class="linea">
+            </div>
+            <div class="modo-oscuro">
+                <div class="info">
+                    <ion-icon name="moon-outline"></ion-icon>
+                    <span>Dark mode</span>
+                </div>
+                <div class="switch">
+                    <div class="base">
+                        <div class="circulo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <h1>LamatGen v1.1</h1>
+        <p>
+            LamatGen es un repositorio capaz de generar modelos 3D de curvas y superficies a partir de una parametrización en una variable.
+            Otorga además herramientas de resolución de sistemas de ecuaciones diferenciales e interpolación de datos para crear curvas a 
+            partir de modelos de EDO o de un conjunto de pocos datos. El repositorio está programado en C++ y es de libre acceso para 
+            cualquier persona que lo requiera. Además, LamatGen está optimizado para crear modelos compatibles con laminadores para impresión 
+            3D como Prusa Slicer y Ultimaker Cura.
+        </p>   
+        <h2>Instalación</h2>
+        <p>
+            Basta con clonar el repositorio desde una terminal a partir de:
+        </p>
+        <div class="box__github">
+            <code>$ git clone https://github.com/LabMat-FCFM-UNACH/lamatgen</code>
+        </div>
+        <p>
+            o bien descargar el reposito desde nuestro <a href="#">github</a>
+        </p>
+        <h2>Novedades de la versión</h2>
+        <b>5/04/24 Versión 1.1</b>
+        <ul>
+            <li>Optimizado el proceso de creación del archivo disminuyendo el tiempo de creación del archivo alrededor del 50%.</li>
+            <li>Optimizado el proceso de búsqueda de puntos consecutivos.</li>
+        </ul>
+        <b>2/04/24 Versión 1.0</b>
+        <ul>
+            <li>Posibilidad de crear modelos 3D de curvas paramétricas compatibles con Prusa Slicer y Ultimaker Cura (la parametrización necesita partir de una lista de puntos en R3 para funcionar).</li>
+            <li>Añadida una interfaz de usuario para la terminal.</li>
+            <li>Añadida detección de puntos consecutivos que puedan causar irregularidades con la curva.</li>
+            <li>Repositorio disponible en Python y C++. (Buscando utilizar otros lenguajes para el cálculo más eficaz de proyectos, por cuestiones de amigabilidad con el usuario se mantiene el repositorio en versiones para ambos lenguajes).</li>
+            <li>Añadidas advertencias para modelos de más de un millón de triángulos (una cantidad de triángulos exagerada de triángulos puede causar problemas de rendimiento y procesado en equipos de baja potencia).</li>
+            <li>Añadido método de Runge Kutta en cuarto orden para ara resolución de sistemas de ecuaciones diferenciales ordinarias con condiciones iniciales.</li>
+        </ul> 
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

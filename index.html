@@ -25,7 +25,7 @@
         <ul class="navegador">
             <ion-icon id="close" name="close-outline"></ion-icon>
             <li>
-                <a href="index.html">
+                <a class="pagina" href="index.html">
                     <ion-icon name="home-outline"></ion-icon>
                     <span>INICIO</span>
                 </a>
@@ -59,7 +59,7 @@
                 </div>
                 <ul class="menu__contextual-1">
                     <li>
-                        <a href="LamatGenv1.2.14/index.html">
+                        <a href="LamatGenv1.2.15/index.html">
                             <ion-icon name="flask-outline"></ion-icon>
                             <span>LamatGet</span>
                         </a>
@@ -90,17 +90,34 @@
             </div>
             <div class="main__box">
                 <h2>Nuestro trabajo</h2>
-                <h3>LamatGen v1.1</h3>
                 <div class="linea"></div>
-                <div>
-                    <p>
-                        LamatGen es una librería para C++ y Python que permite la creación de modelos obj de curvas paramétricas optimizadas 
-                        para impresión 3D.
-                    </p>
+                <div class="box--flex">
+                    <div class="cajita">
+                        <h3>LamatGen v1.1</h3>
+                        <div class="linea"></div>
+                        <p class="p-index">
+                            LamatGen es un toolkit para C++ enfocado en la creación de modelos 3D de curvas paramétricas optimizadas para
+                            procesos de impresión 3D.
+                        </p>
+                        <div class="box__img">
+                            <a href="LamatGenv1.2.15/index.html"><img src="Fotos/lamatgen.jpeg"></a>
+                        </div>
+                    </div>
+                    <div class="cajita">
+                        <h3>Bestiario matemático</h3>
+                        <div class="linea"></div>
+                        <p class="p-index">
+                            Bestiario matemático es una muestra museográfica que describe objetos matemáticos exóticos, su historia y
+                            características enfocadas a un publico general.
+                        </p>
+                        <div class="box__img">
+                            <a href="eventos.html"><img src="Fotos/WhatsApp Image 2024-08-16 at 1.56.50 PM.jpeg"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="main__box">
-                <h2>-</h2>
+            <!--<div class="main__box">
+                <div class="empty"></div>
                 <h3>Bestiario matemático</h3>
                 <div class="linea"></div>
                 <p>
@@ -108,9 +125,9 @@
                     su narración de forma divulgativa
                 </p>
                 <div class="box__img">
-                    <img class="" src="Fotos/WhatsApp Image 2024-08-16 at 1.56.50 PM.jpeg">
+                    <img src="Fotos/WhatsApp Image 2024-08-16 at 1.56.50 PM.jpeg">
                 </div>
-            </div>
+            </div>-->
         </main>
         <aside>
             <h2 class="con-border">Actividades</h2>
@@ -118,7 +135,7 @@
             <div class="slider">
                 <div class="list">
                     <div class="item">
-                        <img src="img/Expo_bienvenida_2024.jpeg" alt="">
+                        <a href="expo_bienvenida_2024.html"><img src="img/Expo_bienvenida_2024.jpeg" alt=""></a>
                     </div>
                     <!--<div class="item">
                         <img src="img/2.jpg" alt="">
@@ -146,9 +163,10 @@
                 </ul>
             </div>
             <div class="efemerides">
-                <h2 class="con-border">Efemérides</h2>
+                <h2 class="con-border">¿Qué pasó hoy?</h2>
                 <div class="linea"></div>
-                <div id="fecha_actual"></div>
+                <!--<div id="fecha_actual"></div>-->
+                <div id="contenido_efemerides"></div>
             </div>
         </aside>
     </div>
@@ -158,6 +176,11 @@
                 Carretera Emiliano Zapata km 8.0, Rancho San Francisco, Ciudad Universitaria, Terán,<br>
                 Tuxtla Gutiérrez, Chiapas, 29050
             </span>
+            <ul class="redes-sociales">
+                <li><a href="https://www.facebook.com/profile.php?id=61565087828440"><ion-icon class="logo-facebook" name="logo-facebook"></ion-icon></a></li>
+                <li><a href="https://www.instagram.com/labmat.fcfm.unach?igsh=b3d5MXRpZHRnNGk="><ion-icon class="logo-instagram" name="logo-instagram"></ion-icon></a></li>
+                <li><a href="https://github.com/LabMat-FCFM-UNACH"><ion-icon class="logo-github" name="logo-github"></ion-icon></a></li>
+            </ul>
         </div>
         <div>
             <img src="universidad.png" style="width:100%">

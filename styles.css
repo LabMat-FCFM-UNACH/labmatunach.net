@@ -20,6 +20,12 @@ body{
 h1,h2,h3{
    margin: 5px;
    color: var(--color-secundario);
+   text-align: start;
+}
+
+.empty{
+   width: 100%;
+   height: 53px;
 }
 
 h1,h2{
@@ -163,6 +169,11 @@ nav .navegador li .nav__item, nav .navegador li .nav__item-1{
    cursor: pointer;
 }
 
+nav .navegador li .pagina{
+   background-color: var(--color-secundario);
+   color: var(--color-principal);
+}
+
 #open{
    display: none;
 }
@@ -290,7 +301,7 @@ nav .navegador li .menu__contextual-1 li a{
 }
 
 .main__index main{
-   max-width: 65vw;
+   max-width: 60vw;
    display: flex;
    flex-wrap: wrap;
    gap: 20px;
@@ -307,6 +318,17 @@ nav .navegador li .menu__contextual-1 li a{
    flex-basis: auto
 }
 
+.box--flex{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.box--flex .cajita{
+   width: 48%;
+   min-width: 250px;
+}
+
 .box__img{
    width: 100%;
    display: flex;
@@ -320,19 +342,16 @@ nav .navegador li .menu__contextual-1 li a{
    border-radius: 10px;
 }
 
-@media screen and (max-width: 950px){
-   
-}
 
 /*aside*/
 .main__index aside{
-   max-width: 30vw;
+   max-width: 35vw;
 }
 
 /* Estilos del slider */
 .slider {
     min-width: 312px;
-    min-height: 200px;
+    min-height: 300px;
     position: relative;
     overflow: hidden;
     z-index: 1; /* Asegúrate de que el slider esté debajo del menú contextual */
@@ -343,9 +362,10 @@ nav .navegador li .menu__contextual-1 li a{
     top: 0;
     display: flex;
     transition: 1s;
+    height: 100%;
 }
 .slider .list img {
-    object-fit: cover;
+    /*object-fit: cover;*/
     width: 100%;
     height: 100%;
 }
@@ -393,17 +413,64 @@ nav .navegador li .menu__contextual-1 li a{
 }
 
 @media screen and (max-width: 950px){
+   .main__index main{
+       max-width: 90%;
+   }
+   
    .main__index aside{
        max-width: 90%;
    }
+   
+   .box--flex .cajita{
+       width: 100%;
+   }
 }
 
+
+/* Estilo para la fecha */
+#fecha_actual {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el contenido de las efemérides */
+#contenido_efemerides {
+    font-size: 16px;
+    color: #444;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    max-height: 300px;
+    white-space: pre-wrap;
+}
+
+/* Estilo para cuando no se encuentra el archivo */
+#contenido_efemerides.error {
+    color: red;
+}
+
+/* Preformat para mostrar bien el texto */
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+    white-space: pre-wrap;
+}
 
 /*EQUIPO*/
 
 .main__nosotros{
    margin: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
+
+.main__nosotros main{
+   width: 90%;
+}
+
 
 .box__descripciones{
    display: flex;
@@ -413,7 +480,6 @@ nav .navegador li .menu__contextual-1 li a{
 }
 
 .personal__descripciones{
-   max-width: 40vw;
    flex-grow: 1;
    flex-basis: min-content;
    min-width: 250px;
@@ -459,9 +525,11 @@ nav .navegador li .menu__contextual-1 li a{
 }*/
 
 .main__contacto{
-   width: 100vw;
    display: flex;
    justify-content: center;
+   gap: 50px;
+   flex-wrap: wrap;
+   margin: 15px;
 }
 
 .form_input{
@@ -534,77 +602,218 @@ label:has(input:invalid), input:invalid{
 }
 
 @media screen and (max-width: 950px){
-   .main__contacto{
+   /*.main__contacto{
        max-width: 100vw;
-       height: 75vh;
-   }
+   }*/
 }
 
 /*EVENTOS*/
 
 .titulo__eventos{
-   margin: 10px;
+   width: 80%;
 }
 
 
 .main__eventos{
    display: flex;
-   justify-content: center;
+   flex-direction: column;
+   align-items: center;
    margin: 10px;
-   height: 70vh;
 }
 
-.eventos__galeria{
+
+.box__eventos{
+   width: 80%;
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-around;
    gap: 20px;
-   max-width: 950px; 
+   margin: 10px;
+   padding: 17px;
+   justify-content: space-between;
+   background-color: var(--color-secundario);
+   color: var(--color-principal);
+   border: 3px solid var(--color-principal);
+   border-radius: 20px;
+   transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
 }
 
-.box__galeria1,.box__galeria2, .box__galeria3, .box__galeria4, .box__galeria5, .box__galeria6{
-   width: 300px;
-   height: 200px;
-   display: flex;
-   cursor: pointer;
+.eventos__reverse{
+   flex-direction: row-reverse;
 }
 
-.eventos__img{
-   width: 100%;
-   height: 100%;
-   border-radius: 10px;
+.box__eventos div h2{
+   color: var(--color-principal);
+   transition: color 0.5s ease;
 }
 
-.eventos__display1,.eventos__display2,.eventos__display3,.eventos__display4,.eventos__display5,.eventos__display6{
-   display: none;
-   position: absolute;
-   padding: 10px;
+.box__eventos img{
+   height: 250px;
+   border-radius: 20px;
+} 
+
+.box__eventos div p{
    font-family: Oswald, sans-serif;
 }
 
-.eventos__display1.info,.eventos__display2.info,.eventos__display3.info,.eventos__display4.info,.eventos__display5.info,.eventos__display6.info{
-   display: blocK;
-   background-color: var(--color-secundario);
-   color: var(--color-principal);
-   width: 280px;
-   height: 180px;
-   border-radius: 10px;
+.box__eventos div a{
+    text-decoration: none;
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    padding: 10px 30%;
+    border-radius: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease, border-radius 0.5s ease;
 }
 
-@media screen and (max-width: 950px){
-   .main__eventos{
-       height: 100%;
+.h2__eventos{
+   margin: 0;
+}
+/*Eventos hover*/
+.box__eventos:hover{
+   background-color: var(--color-principal);
+   color: var(--color-secundario);
+   border: 3px solid var(--color-secundario);
+}
+
+
+.box__eventos:hover div h2{
+   color: var(--color-secundario);
+}
+
+.box__eventos:hover div a{
+   background-color: var(--color-secundario);
+   color: var(--color-principal);
+}
+
+.box__eventos div a:hover{
+   background-color: var(--color-principal);
+   color: var(--color-secundario);
+   border: 3px solid var(--color-secundario);
+   border-radius: 20px;
+}
+
+
+@media screen and (max-width: 1173px){
+   .box__eventos{
+       justify-content: center;
+   }
+   
+   .eventos__reverse{
+       flex-direction: initial;
+   }
+   
+   .box__eventos div{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+   }
+   
+   .box__eventos div p{
+       text-align: center;
+   }
+   
+   .box__eventos div a{
+       text-align: center;
+   }
+   
+   .h2__eventos{
+       text-align: center;
    }
 }
+
+@media screen and (max-width: 500px){
+   .box__eventos img{
+       width: 90%;
+   }
+}
+
+/*Expo_bienvenida_2024*/
+
+.main__expo_bienvenida_2024{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 10px;
+}
+
+.contenedor__expo{
+   width: 90%;
+}
+
+.galeria__expo{
+   display: grid;
+   justify-content: center;
+   grid-template-columns: repeat(auto-fit,minmax(100px,300px)); /*WIDTH*/  /*auto-fit para poco(rellena) , auto-fill para mucho(crea)*/
+   grid-template-rows: repeat(1,250px); /*COLUMN*/
+   grid-auto-rows: 250px;
+   gap: 10px;
+}
+
+.galeria__expo div img{
+   width: 100%;
+   height: 100%;
+   border-radius: 30px;
+}
+
 
 /*FOOTER*/
 
 footer{
    display: flex;
    flex-wrap: wrap;
-   gap: 10px;
+   gap: 20px;
    background-color: #555;
    color: #eeeeee;
    padding: 20px;
    justify-content: space-between;
+}
+
+.redes-sociales{
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   align-items: center;
+}
+
+.sociales--contacto{
+   justify-content: left;
+   padding: 0;
+}
+
+.redes-sociales li{
+}
+
+.redes-sociales li a{
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.redes-sociales li a ion-icon{
+   width: 30px;
+   font-size: 30px;
+   color: var(--color-principal);
+   transition: color 0.5s ease;
+}
+
+.redes-sociales li a .directorio{
+   color: var(--color-secundario);
+}
+
+.redes-sociales li a .logo-facebook:hover{
+   color: #3b5998;
+}
+
+.redes-sociales li a .logo-instagram:hover{
+   color: linear-gradient(45deg,#405de6,#5b51db,#b33ab4,#c135b4,#e1306c,#fd1f1f);
+}
+
+.redes-sociales li a .logo-github:hover{
+   color: #24262a;
+}
+
+.p-index{
+   height: 100px;
 }

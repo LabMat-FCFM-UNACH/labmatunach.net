@@ -1,0 +1,377 @@
+:root{
+   --color-barra-lateral: #eeeeee;
+   
+   --color-texto: #000;
+   --color-texto-menu: #aaa;
+   
+   --color-menu-hover: #ccc;
+   --color-menu-hover-texto: #000;
+   
+   --color-boton: #000;
+   --color-boton-texto: #eeeeee;
+   
+   --color-linea: #bbb;
+   
+   --color-switch-base: #bcb;
+   --color-switch-circulo: #ddd;
+}
+
+.dark-mode{
+   --color-barra-lateral: #333333;
+   
+   --color-texto: #eeeeee;
+   --color-texto-menu: #bbb;
+   
+   --color-menu-hover: #000;
+   --color-menu-hover-texto: #ccc;
+   
+   --color-boton: #eeeeee;
+   --color-boton-texto: #000;
+   
+   --color-linea: #aaa;
+   
+   --color-switch-base: #0a0;
+   --color-switch-circulo: #eeeeee;
+}
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   /*background: #4ef;*/
+   text-align: justify;
+}
+
+h1,h2,h3{
+   color: #555;
+   font-family: Oswald, sans-serif;
+   margin: 10px 0 10px 0; 
+}
+
+p{
+   font-family: 'Verdana', sans-serif;
+}
+
+b{
+   font-family: Oswald, sans-serif;
+   margin: 10px 0 10px 0; 
+}
+
+.nav__lateral{
+   position: fixed;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 250px;
+   height: 100%;
+   overflow: hidden;
+   padding: 20px 15px;
+   background-color: var(--color-barra-lateral);
+   transition: width 0.5s ease,background-color 0.3s ease;
+   z-index: 50;
+}
+
+.min-nav-lateral{
+   width: 80px;
+}
+
+.nav__lateral span{
+   width: 100px;
+   white-space: nowrap;
+   font-size: 18px;
+   text-align: left;
+   opacity: 1;
+   transition: opacity 0.5s ease,width 0.5s ease;
+}
+
+.nav__lateral span.oculto{
+   opacity: 0;
+   width: 0;
+}
+
+/*NOMBRE DE LA PÁGINA*/
+.nav__lateral .nombre__pagina{
+   width: 100%;
+   height: 45px;
+   color: var(--color-texto);
+   margin-bottom: 40px;
+   display: flex;
+   align-items: center;
+}
+
+.box--labmat{
+   width: 100%;
+   height: 80px;
+   display: flex;
+   margin: 5px 0 5px 0;
+   overflow-x: hidden; 
+}
+
+.logo--labmat{
+   width: 100%;
+   height: 100%
+}
+
+.box--labmat .logo--labmat img{
+   width: 50px;
+   height: 100%;
+}
+
+.nav__lateral .nombre__pagina ion-icon{
+   min-width: 50px;
+   font-size: 40px;
+   cursor: pointer;
+   color: var(--color-texto);
+   transition: transform 0.5s ease-in-out, color 0.3s ease-in-out;;
+}
+
+.rotate{
+   transform: rotate(-180deg);
+}
+
+.nav__lateral .nombre__pagina span{
+   margin-left: 5px;
+   font-size: 25px;
+}
+
+/*MENU DE NAVEGACIÓN*/
+
+.nav__lateral .nav{
+   height: 100%;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+.nav__lateral .nav::-webkit-scrollbar{
+   width: 5px;
+}
+
+.nav__lateral .nav::-webkit-scrollbar-thumb{
+   background-color: #000;
+   border-radius: 5px;
+}
+
+.nav__lateral .nav::-webkit-scrollbar-thumb:hover{
+   background-color: #f00;
+}
+
+.nav__lateral .nav li{
+   list-style: none;
+   display: flex;
+   margin-bottom: 5px;
+}
+
+.nav__lateral .nav a{
+   width: 100%;
+   height: 45px;
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   border-radius: 10px;
+   color: var(--color-texto-menu);
+}
+
+.nav__lateral .nav a:hover{
+   background-color: var(--color-menu-hover);
+   color: var(--color-menu-hover-texto);
+}
+
+.nav__lateral .nav ion-icon{
+   min-width: 50px;
+   font-size: 20px;
+}
+
+/*LINEA*/
+
+.nav__lateral .linea{
+   width: 100%;
+   height: 1px;
+   margin-top: 15px;
+   background-color: var(--color-linea);
+}
+
+/*MODO OSCURO*/
+
+.nav__lateral .modo-oscuro{
+   width: 100%;
+   border-radius: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.nav__lateral .modo-oscuro .info{
+   width: 150px;
+   height: 45px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   color: var(--color-texto-menu);
+}
+
+.nav__lateral .modo-oscuro ion-icon{
+   width: 50px;
+   font-size: 20px;
+}
+
+.nav__lateral .modo-oscuro .switch{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-width: 50px;
+   height: 45px;
+   cursor: pointer;
+}
+
+.nav__lateral .modo-oscuro .base{
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 35px;
+   height: 20px;
+   background-color: var(--color-switch-base);
+   border-radius: 50px;
+}
+
+.nav__lateral .modo-oscuro .circulo{
+   position: absolute;
+   width: 18px;
+   height: 90%;
+   background-color: var(--color-switch-circulo);
+   border-radius: 50%;
+   left: 2px;
+   transition: left 0.5s ease;
+}
+
+.nav__lateral .modo-oscuro .circulo.activado{
+   left: 15px;
+}
+/*MAIN*/
+#pagina{
+   background-color: var(--color-menu-hover);
+   color: var(--color-menu-hover-texto);
+}
+
+main{
+   margin-left: 250px;
+   padding: 20px;
+   transition: margin-left 0.5s ease;
+}
+main.min-main{
+   margin-left: 80px;
+}
+
+/*Resposive*/
+
+@media (max-height: 660px){
+   .nav__lateral .nombre__pagina{
+       margin-bottom: 5px;
+   }
+   
+   .nav__lateral .modo-oscuro{
+       margin-bottom: 3px;
+   }
+}
+
+.open-menu{
+   background-color: #000;
+   position: fixed;
+   display: none;
+   width: 100%;
+   color: #fff;  
+}
+
+.close-menu{
+   display: none;
+   width: 50px;
+}
+
+.open-menu ion-icon,.close-menu ion-icon{
+   width: 50px;
+   font-size: 30px;
+}
+
+@media (max-width: 600px){
+   .open-menu, .close-menu{
+       display: flex;
+       justify-content: end;
+   }
+   
+   .nav__lateral{
+       position: fixed;
+       left: -250px;
+       transition: left 0.5s ease;
+   }
+   
+   .nav__lateral.open{
+       left: 0px;
+   }
+   
+   main{
+      margin-left: 0;
+   }
+   main.min-main{
+       margin-left: 0;
+   }
+}
+
+/*INDEX*/
+
+.box__github{
+   background-color: #eeeeee;
+   border: 2px solid #555;
+   border-radius: 5px;
+   text-align: center;
+   padding: 10px;
+}
+
+/*Ejemplo*/
+
+pre{
+   white-space: pre-wrap; /* Permite el ajuste de línea */
+   word-wrap: break-word; /* Ajusta las palabras largas */
+   font-size: 13px; /* Tamaño de fuente del bloque de código */
+   line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+}
+
+code{
+   font-size: inherit; /* Hereda el tamaño de fuente del contenedor <pre> */
+}
+
+.azul{
+   color: #00f;
+}
+
+.verde{
+   color: #050;
+}
+
+.limon{
+   color: #0f0
+}
+
+.marron{
+   color: #f5b041; 
+}
+
+/*Galería*/
+
+.box__galeria{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   gap: 5px;
+}
+
+.galeria__img{
+   width: 250px;
+   border-radius: 20px;
+}
+
+.galeria__img:hover{
+   opacity: 0.75;
+   transform: scale(1.1);
+}

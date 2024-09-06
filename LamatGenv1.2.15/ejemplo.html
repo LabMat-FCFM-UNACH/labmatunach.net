@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LamatGen</title>
+    <link rel="icon" href="LamatIcon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="open-menu">
+        <ion-icon id="open-menu" name="menu-outline"></ion-icon>
+    </div>
+    <div id="elemento" class="nav__lateral">
+        <div class="close-menu">
+            <ion-icon name="close-circle-outline"></ion-icon>
+        </div>
+        <div>
+            <div class="nombre__pagina">
+                <ion-icon id="bestiario" name="caret-back-outline"></ion-icon>
+                <span>LamatGen</span>
+            </div>
+        </div>
+        <div class="box--labmat">
+            <div class="logo--labmat"><a href="index.html"><img src="LamatGEn.png"></a></div>
+            <div class="logo--labmat"><a href="../index.html"><img src="Laboratorio de matemáticas no fondo.png"></a></div>
+            <div class="logo--labmat"><a href="https://www.fcfm.unach.mx/"><img src="logo fcfm.png"></a></div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="pagina" href="ejemplo.html">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <span>Ejemplo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="galeria.html">
+                        <ion-icon name="image-outline"></ion-icon>
+                        <span>Galeria</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        <ion-icon name="body-outline"></ion-icon>
+                        <span>Contacto</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <div class="linea">
+            </div>
+            <div class="modo-oscuro">
+                <div class="info">
+                    <ion-icon name="moon-outline"></ion-icon>
+                    <span>Dark mode</span>
+                </div>
+                <div class="switch">
+                    <div class="base">
+                        <div class="circulo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <h1>Ejemplos</h1>
+        <h3>Crear una parametrización1</h3>
+        <p>
+            LamatGen funciona a partir de un arreglo de puntos en 3 dimensiones, en específico, es capaz de crear una curva para un vector 
+            con un mínimo de dos vectores de la forma {{a1,a2,a3},{b1,b2,b3}}. Aunque es posible agregar los puntos a mano, recomendamos crear 
+            una lista de vectores a partir de un ciclo for.
+                
+            Para este ejemplo, usaremos la parametrización de una parábola que se mantiene en el plano XY. Esta curva se compone de los
+            siguientes puntos: \((t, t*t, 0), -a\leq t \leq a\)
+
+            El código que nos generará la lista de puntos será:
+        </p>
+        <div class="box__codigo">
+            <pre><code>
+<span class="azul">vector</span>&lt;<span class="azul">vector</span>&lt;<span class="azul">double</span>&gt;&gt; parabola = {}; <span class="verde">// Por precaución, define el vector como un vector vacío antes de agregar elementos.</span>
+<span class="azul">for</span> (<span class="azul">double</span> t = -<span class="limon">2</span>; t<=<span class="limon">2</span>; t+=<span class="limon">0.01</span>){ <span class="verde">// En este caso, nuestra parábola toma los valores -2 <= t <= 2, genera puntos con 0.01 en separación entre ellos.</span>
+parabola.<span class="marron">push_back</span>({t, t*t, <span class="limon">0</span>});<span class="verde">// Escribir aquí la parametrización.</span>
+            </code></pre>
+        </div>
+        <h3>Unir curvas parametrizadas</h3>
+        <p>
+            Puesto que para C++ un vector es algo básicamente una lista estática, podemos unir distintas parametrizaciones de forma que 
+            creemos un modelo de una función por partes. Tomemos por ejemplo una función que describa la sección de un círculo desde 0 <= t < 
+            pi/2 pero a partir de t = pi/2 se convierte en una hélice. La función que describirá nuestra curva será: \(S(t) = { (cost, sint, 
+            0),  0 \leq t \leq pi/2, (cost, sint, t) pi/2 \leq t \leq a}\) En este caso, podemos unir ambas parametrizaciones a partir de dos 
+            ciclos for:
+        </p>
+        <div class="box__codigo">
+            <pre><code>
+<span class="azul">vector</span>&lt;<span class="azul">vector</span>&lt;<span class="azul">double</span>&gt;&gt; curva = {}; <span class="verde">// Definimos una lista vacía que contendrá a la curva.</span> 
+<span class="verde">// Primera sección de la curva</span>
+<span class="azul">for</span> (<span class="azul">double</span> t = <span class="limon">0</span>; t < <span class="limon">M_PI/2</span>; t+=<span class="limon">0.01</span>){
+curva.<span class="marron">push_back</span>({cos(t), sin(t), <span class="limon">0</span>});
+}
+<span class="verde">// Segunda sección de la curva</span>
+<span class="azul">for</span> (<span class="azul">double</span> t = <span class="verde">M_PI/2</span>
+; t < <span class="verde">M_PI</span>; t+=<span class="verde">0.01</span>){
+curva.<span class="marron">push_back</span>({cos(t), sin(t), t});
+}
+            </code></pre>
+        </div>
+        <p>
+            Esto generará una lista con todos los puntos necesarios de tu curva.
+        </p>
+        <p>
+            Nota: Debido a como entienden las computadoras los números con puntos decimales, si es necesario usar números irracionales como 
+            pi en el caso de este ejemplo, será necesario que sumes un valor a tu curva para generar una curva cerrada, para ejemplo un 
+            círculo.
+        </p>
+        <div class="box__codigo">
+            <pre><code>
+<span class="azul">vector</span>&lt;<span class="azul">vector</span>&lt;<span class="azul">double</span>&gt;&gt; circulo = {};  
+<span class="verde">// Primera sección de la curva</span>
+<span class="azul">for</span> (<span class="azul">double</span> t = <span class="verde">0</span>; t < <span class="verde">2*M_PI + 0.01</span>; t+=<span class="verde">0.01</span>){
+circulo.<span class="marron">push_back</span>({cos(t), sin(t), <span class="verde">0</span>});
+}
+            </code></pre>
+        </div>
+        <p>
+            De no sumar, la curva que se genere no estará cerrada, al generarla no causará ningún problema, pero en la parte estética no se 
+            verá bien.
+        </p>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

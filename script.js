@@ -17,7 +17,11 @@ let items = document.querySelectorAll('.slider .list .item');
 let next = document.getElementById('next');
 let prev = document.getElementById('prev');
 let dots = document.querySelectorAll('.slider .dots li');
-console.log("Script inline cargado");
+
+//Node
+
+/*const fs = require('node:fs');*/
+
 // Función para manejar el menú contextual
 function manejarMenu(navItem, menuContextual, flecha) {
     let isSmallScreen = window.innerWidth <= 855;
@@ -144,48 +148,50 @@ window.onresize = function () {
     reloadSlider();
 };
 
-// Fecha actual
+/*// Fecha actual
 var fechaActual = new Date();
 var dia = fechaActual.getDate();
 var mes = fechaActual.getMonth() + 1;
 var año = fechaActual.getFullYear();
 var fechaFormateada = dia + "/" + mes + "/" + año;
-document.getElementById("fecha_actual").innerHTML = "La fecha actual es: " + fechaFormateada;
+var fechaArchivo = dia + "_" + mes + ".txt";
+//document.getElementById("fecha_actual").innerHTML = "La fecha actual es: " + fechaFormateada;
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-        event.preventDefault();
+const archivo = fs.readFileSync(Efemerides/fechaArchivo, 'utf-8')
+document.getElementById("fecha_actual").innerHTML = fechaFormateada + "efemerides: " + "<br>" + archivo;*/
 
-        // Verificar que todos los campos estén llenos
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        const mensaje = document.getElementById('mensaje').value;
+// Obtener la fecha actual
+const fechaActual = new Date();
+const dia = fechaActual.getDate();
+const mes = fechaActual.getMonth() + 1;
+const año = fechaActual.getFullYear();
+const fechaFormateada = `${dia}/${mes}/${año}`;
 
-        if (!nombre || !email || !mensaje) {
-            alert('Por favor, completa todos los campos antes de enviar el formulario.');
-            return;
+// Mostrar la fecha actual en el HTML
+//document.getElementById('fecha_actual').innerText = `La fecha actual es: ${fechaFormateada}`;
+
+// Crear el nombre del archivo a partir de la fecha
+const nombreArchivo = `${dia}_${mes}.efe`;
+
+// Ruta a la carpeta de efemérides
+const rutaArchivo = `Efemerides/${nombreArchivo}`;
+
+// Usar Fetch API para cargar el archivo de efemérides
+fetch(rutaArchivo)
+    .then(response => {
+        // Verificar si el archivo existe
+        if (!response.ok) {
+            throw new Error('No se encontró una efeméride para esta fecha.');
         }
-
-        // Capturar los datos del formulario
-        const formData = {
-            nombre: nombre,
-            email: email,
-            mensaje: mensaje
-        };
-
-        console.log("Enviando formulario con los siguientes datos:", formData);
-
-        // Enviar los datos a través de EmailJS
-        emailjs.send('service_illu4u1', 'template_6uir7wk', formData)
-            .then(function (response) {
-                console.log('Éxito:', response.status, response.text);
-                alert('Mensaje enviado con éxito!');
-                document.getElementById('contact-form').reset(); // Limpiar el formulario después del envío
-            }, function (error) {
-                console.error('Error al enviar el mensaje:', error);
-                alert('Error al enviar el mensaje: ' + JSON.stringify(error));
-            });
+        return response.text();
+    })
+    .then(data => {
+        // Mostrar el contenido del archivo en la página
+        document.getElementById('contenido_efemerides').innerHTML = `<pre>${data}</pre>`;
+    })
+    .catch(error => {
+        // Mostrar un mensaje si no se encuentra el archivo
+        document.getElementById('contenido_efemerides').innerHTML = `Error: ${error.message}`;
     });
-});
 

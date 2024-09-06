@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <div class="nav__item">
+                <div class="nav__item pagina">
                     <ion-icon name="people-outline"></ion-icon>
                     <span>NOSOTROS</span>
                     <ion-icon id="flecha" name="caret-down-outline"></ion-icon>
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="eventos.html">
+                        <a class="pagina" href="eventos.html">
                             <ion-icon name="calendar-outline"></ion-icon>
                             <span>Eventos</span>
                         </a>
@@ -59,7 +59,7 @@
                 </div>
                 <ul class="menu__contextual-1">
                     <li>
-                        <a href="LamatGenv1.2.14/index.html">
+                        <a href="LamatGenv1.2.15/index.html">
                             <ion-icon name="flask-outline"></ion-icon>
                             <span>LamatGet</span>
                         </a>
@@ -74,69 +74,52 @@
             </li>
         </ul>
     </nav>
-    <div class="titulo__eventos">
-        <h1>Divulgación</h1>
-        <div class="linea"></div>
-    </div>
     <main class="main__eventos">
-        <div class="eventos__galeria">
-            <div class="box__galeria3">
-                <div>
-                    <img class="eventos__img" src="img/Expo_bienvenida_2024.jpeg">
-                </div>
-                <div class="eventos__display3">
-                    <span>Exposición de bienvenida</span>
-                </div>
+        <div class="titulo__eventos">
+            <h1>Divulgación</h1>
+            <div class="linea"></div>
+        </div>
+        <div class="box__eventos">
+            <img src="img/Expo_bienvenida_2024.jpeg">
+            <div>
+                <h2 class="h2__eventos">Exposición de bienvenida<br>FCFM 2024</h2>
+                <p>
+                    30 de agosto de 2024<br>
+                    Facultad de Ciencias en Física y<br>
+                    Matemáticas<br>
+                    Universidad Autónoma de Chiapas<br>
+                    Tuxtla Gutiérrez, Chiapas.
+                </p>
+                <a href="expo_bienvenida_2024.html">Galería</a>
             </div>
-            <div class="box__galeria1">
-                <div>
-                    <img class="eventos__img" src="Fotos/WhatsApp Image 2024-08-16 at 2.14.57 PM.jpeg">
-                </div>
-                <div class="eventos__display1">
-                    <span>
-                        <h3 class="h3__eventos">Jornada del conocimiento</h3>
-                        <p>
-                            6 al 10 de noviembre 2023
-                            Museo de Ciencia y Tecnología de Chiapas
-                            Instituto de Ciencia, Tecnologia e
-                            Innovacción del Estado de Chiapas.
-                            Tuxtla Gutiérrez, Chiapas.  
-                        </p>
-                    </span>
-                </div>
+        </div>
+        <div class="box__eventos eventos__reverse">          
+            <img src="img/jornada_conocimiento_2_3.jpeg">
+            <div>
+                <h2 class="h2__eventos">Jornada del conocimiento 2.3</h2>
+                <p>
+                    6 al 10 de noviembre 2023<br>
+                    Museo de Ciencia y Tecnología de Chiapas<br>
+                    Instituto de Ciencia, Tecnología e<br>
+                    Innovación de Estado de Chiapas.<br>
+                    Tuxtla Gutiérrez, Chiapas.
+                </p>
+                <a href="Jornada_del_conocimiento_2_3.html">Galería</a>
             </div>
-            <div class="box__galeria2">
-                <div>
-                    <img class="eventos__img" src="img/4_feria_de_ciencias.jpeg">
-                </div>
-                <div class="eventos__display2">
-                    <span>4 feria de ciencias</span>
-                </div>
+        </div>
+        <div class="box__eventos">
+            <img src="img/4_feria_de_ciencias.jpeg">
+            <div>
+                <h2 class="h2__eventos">4ta Feria de Ciencias FCFM</h2>
+                <p>
+                    31 de marzo 2022<br>
+                    Facultad de Ciencia de Física y<br>
+                    Matemáticas<br>
+                    Universidad Autónoma de Chiapas<br>
+                    Tuxtla Gutiérrez, Chiapas.
+                </p>
+                <a href="4ta_Feria_de_Ciencias_FCFM.html">Galería</a>
             </div>
-            <!--<div class="box__galeria4">
-                <div>
-                    <img class="eventos__img" src="Fotos/WhatsApp Image 2024-08-16 at 2.14.57 PM.jpeg">
-                </div>
-                <div class="eventos__display4">
-                    <span>Carlos Fabian Ramirez Alvarez</span>
-                </div>
-            </div>
-            <div class="box__galeria5">
-                <div>
-                    <img class="eventos__img" src="Fotos/WhatsApp Image 2024-08-16 at 2.14.57 PM.jpeg">
-                </div>
-                <div class="eventos__display5">
-                    <span>Carlos Fabian Ramirez Alvarez</span>
-                </div>
-            </div>
-            <div class="box__galeria6">
-                <div>
-                    <img class="eventos__img" src="Fotos/WhatsApp Image 2024-08-16 at 2.14.57 PM.jpeg">
-                </div>
-                <div class="eventos__display6">
-                    <span>Carlos Fabian Ramirez Alvarez</span>
-                </div>
-            </div>-->
         </div>
     </main>
     <footer>
@@ -145,6 +128,11 @@
                 Carretera Emiliano Zapata km 8.0, Rancho San Francisco, Ciudad Universitaria, Terán,<br>
                 Tuxtla Gutiérrez, Chiapas, 29050
             </span>
+            <ul class="redes-sociales">
+                <li><a href="https://www.facebook.com/profile.php?id=61565087828440"><ion-icon class="logo-facebook" name="logo-facebook"></ion-icon></a></li>
+                <li><a href="https://www.instagram.com/labmat.fcfm.unach?igsh=b3d5MXRpZHRnNGk="><ion-icon class="logo-instagram" name="logo-instagram"></ion-icon></a></li>
+                <li><a href="https://github.com/LabMat-FCFM-UNACH"><ion-icon class="logo-github" name="logo-github"></ion-icon></a></li>
+            </ul>
         </div>
         <div>
             <img src="universidad.png" style="width:100%">
