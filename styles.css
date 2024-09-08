@@ -461,7 +461,6 @@ nav .navegador li .menu__contextual-1 li a{
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 15px;
-    max-height: 300px;
     white-space: pre-wrap;
 }
 
@@ -472,7 +471,6 @@ nav .navegador li .menu__contextual-1 li a{
 
 /* Preformat para mostrar bien el texto */
 pre {
-    font-family: 'Courier New', Courier, monospace;
     text-align: justify;
     white-space: pre-wrap;
 }
