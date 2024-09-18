@@ -361,7 +361,7 @@ nav .navegador li .menu__contextual-1 li a{
 
 /*aside*/
 .main__index aside{
-   max-width: 35vw;
+   width: 35vw;
 }
 
 /* Estilos del slider */
@@ -369,25 +369,36 @@ nav .navegador li .menu__contextual-1 li a{
 
 
 .slider {
-    min-width: 312px;
-    height: 300px;
+    width: 100%;
+    max-width: 100vw;
+    height: 300px; /* Altura fija del slider */
+    margin: auto;
     position: relative;
     overflow: hidden;
-    z-index: 1; /* Asegúrate de que el slider esté debajo del menú contextual */
 }
+
 .slider .list {
+    display: flex; /* Flexbox para alineación horizontal */
     position: absolute;
+    width: 100%; /* Ocupa el 100% del slider */
+    height: 100%; /* Mantener la altura del slider */
     left: 0;
     top: 0;
-    display: flex;
-    transition: 1s;
-    height: 100%;
+    transition: 1s ease-in-out;
 }
-.slider .list img {
-    /*object-fit: cover;*/
-    width: 100%;
-    height: 100%;
+
+.slider .item {
+    flex: 0 0 100%; /* Cada imagen ocupa exactamente el 100% del ancho del slider */
+    height: 100%; /* La altura del item es igual a la del slider */
 }
+
+.slider .list a img {
+    width: 100%; /* Imagen ajustada al 100% del ancho del item */
+    height: 100%; /* Imagen ajustada a la altura del item */
+    object-fit: contain; /* Mostrar toda la imagen dentro del contenedor */
+    border-radius: 10px;
+}
+
 .slider .buttons {
     position: absolute;
     top: 45%;
@@ -396,6 +407,7 @@ nav .navegador li .menu__contextual-1 li a{
     display: flex;
     justify-content: space-between;
 }
+
 .slider .buttons button {
     width: 50px;
     height: 50px;
@@ -406,6 +418,7 @@ nav .navegador li .menu__contextual-1 li a{
     font-family: monospace;
     font-weight: bold;
 }
+
 .slider .dots {
     position: absolute;
     bottom: 10px;
@@ -416,20 +429,22 @@ nav .navegador li .menu__contextual-1 li a{
     padding: 0;
     display: flex;
     justify-content: center;
-    opacity: 0.5;
 }
+
 .slider .dots li {
     list-style: none;
     width: 10px;
     height: 10px;
-    background-color: #fff;
+    background-color: var(--color-secundario);
     margin: 10px;
     border-radius: 20px;
     transition: 0.5s;
 }
+
 .slider .dots li.active {
     width: 30px;
 }
+
 
 @media screen and (max-width: 950px){
    .main__index main{
@@ -437,7 +452,7 @@ nav .navegador li .menu__contextual-1 li a{
    }
    
    .main__index aside{
-       max-width: 90%;
+       width: 90%;
    }
    
    .box--flex .cajita{
@@ -447,11 +462,11 @@ nav .navegador li .menu__contextual-1 li a{
 
 
 /* Estilo para la fecha */
-#fecha_actual {
+/*#fecha_actual {
     font-size: 18px;
     color: #666;
     margin-bottom: 10px;
-}
+}*/
 
 /* Estilo para el contenido de las efemérides */
 #contenido_efemerides {
