@@ -81,7 +81,7 @@ header div a img{
    
    nav .header__movil .icon-open{
        width: 100%;
-       margin: auto 30px auto 15px;
+       margin: auto 30px auto 2px;
        display: flex;
        justify-content: end;
    }
@@ -217,10 +217,9 @@ nav .navegador li .pagina{
    
    #close{
        display: block;
-       width: 100%;
        font-size: 30px;
-       margin-left: 55px;
-       margin-top: 10px;
+       margin-top: 20px;
+       margin-left: 147px;
        color: var(--color-secundario);
    }
    
@@ -738,7 +737,7 @@ label:has(input:invalid), input:invalid{
 }
 
 
-@media screen and (max-width: 1173px){
+@media screen and (max-width: 1170px){
    .box__eventos{
        justify-content: center;
    }
