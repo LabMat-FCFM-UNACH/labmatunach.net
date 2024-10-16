@@ -163,42 +163,41 @@ async function obtenerImagenesRecientes() {
     let dia = fechaActual.getDate();
     let mes = fechaActual.getMonth() + 1;
     let año = fechaActual.getFullYear();
-    
-    while (imagenes.length < 3) {
+
+    while (alts.length < 3) {
         const nombreImagen = generarNombreImagen(dia, mes, año) + `.png`;
         const rutaImagen = `Actividades/${nombreImagen}`;
         const nombreEnlace = generarNombreImagen(dia, mes, año) + `.txt`;
         const rutaEnlace = `Actividades/${nombreEnlace}`;
         const nombreAlt = generarNombreImagen(dia, mes, año) + `_alt.txt`;
         const rutaAlt = `Actividades/${nombreAlt}`;
-        
+
         try {
-            const response = await fetch(rutaImagen);
-            if (response.ok) {
-                imagenes.push(rutaImagen); // Agregar la imagen si existe
+            // Usar Promise.all para hacer fetch simultáneo
+            const [resImagen, resEnlace, resAlt] = await Promise.all([
+                fetch(rutaImagen),
+                fetch(rutaEnlace),
+                fetch(rutaAlt)
+            ]);
+
+            if (resImagen.ok) {
+                imagenes.push(rutaImagen);
             }
-        } catch (error) {
-            console.log(`Imagen no encontrada para: ${nombreImagen}`);
-        }
-        try {
-            const response = await fetch(rutaEnlace);
-            if (response.ok) {
-                const textoEnlace = await response.text(); // Leer contenido del .txt
-                enlaces.push(textoEnlace); // Agregar la imagen si existe
+
+            if (resEnlace.ok) {
+                const textoEnlace = await resEnlace.text();
+                enlaces.push(textoEnlace);
             }
+
+            if (resAlt.ok) {
+                const textoAlt = await resAlt.text();
+                alts.push(textoAlt);
+            }
+
         } catch (error) {
-            console.log(`Enlace no encontrada para: ${nombreEnlace}`);
+            console.log(`Error al obtener datos para la fecha: ${dia}/${mes}/${año}`);
         }
-        try {
-            const response = await fetch(rutaAlt);
-            if (response.ok) {
-                const textoAlt = await reponse.text(); // Leer contenido del .txt
-                alts.push(textoAlt); // Agregar la imagen si existe
-            }   
-        } catch (error) {
-            console.log(`Alt no encontrada para: ${nombreAlt}`);
-        }
-        console.log(imagenes,enlaces,alts)
+
         // Restar un día y ajustar mes y año si es necesario
         dia--;
         if (dia === 0) {
@@ -210,31 +209,37 @@ async function obtenerImagenesRecientes() {
             dia = new Date(año, mes, 0).getDate(); // Último día del mes anterior
         }
     }
-    return {imagenes, enlaces, alts};
+    return { imagenes, enlaces, alts };
 }
-
-
 
 // Función para cargar y mostrar las imágenes en el slider
 async function cargarImagenesEnSlider() {
-    const {imagenes, enlaces, alts} = await obtenerImagenesRecientes();
-    
+    const { imagenes, enlaces, alts } = await obtenerImagenesRecientes();
+
     // Limpiar el contenido del slider y los dots antes de agregar las nuevas imágenes
     sliderList.innerHTML = '';
     dotsContainer.innerHTML = '';
+
+    // Crear un fragmento para evitar múltiples manipulaciones del DOM
+    const fragmentoSlider = document.createDocumentFragment();
+    const fragmentoDots = document.createDocumentFragment();
 
     // Añadir las tres imágenes al slider
     imagenes.forEach((rutaImagen, index) => {
         let item = document.createElement('div');
         item.classList.add('item');
-        item.innerHTML = `<a href="${enlaces[index]}"><img src="${rutaImagen}" alt="Imagen reciente"></a>`;
-        sliderList.appendChild(item);
+        item.innerHTML = `<a href="${enlaces[index]}"><img src="${rutaImagen}" alt="${alts[index] || 'Imagen reciente'}"></a>`;
+        fragmentoSlider.appendChild(item);
 
         // Crear los dots
         let dot = document.createElement('li');
         if (index === 0) dot.classList.add('active'); // El primer dot es activo
-        dotsContainer.appendChild(dot);
+        fragmentoDots.appendChild(dot);
     });
+
+    // Insertar todos los elementos en el DOM de una sola vez
+    sliderList.appendChild(fragmentoSlider);
+    dotsContainer.appendChild(fragmentoDots);
 
     // Inicializar items después de agregar imágenes
     items = document.querySelectorAll('.slider .list .item');
@@ -248,6 +253,7 @@ async function cargarImagenesEnSlider() {
 
 // Llamar a la función para cargar las imágenes al cargar la página
 cargarImagenesEnSlider();
+
 
 console.log(fechaActual);
 
