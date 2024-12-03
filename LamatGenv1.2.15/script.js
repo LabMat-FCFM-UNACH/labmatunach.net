@@ -1,48 +1,34 @@
-const bestiario = document.getElementById("bestiario");
-const navLateral = document.querySelector(".nav__lateral");
-const spans = document.querySelectorAll("span");
-const change = document.querySelector(".switch");
-const circulo = document.querySelector(".circulo");
-const openMenu = document.getElementById("open-menu");
-const closeMenu = document.querySelector(".close-menu");
-const main = document.querySelector("main")
-/*var elemento = document.getElementById('elemento');*/
- 
-//Modo oscuro 
-change.addEventListener("click",()=>{
-   let body = document.body;
-   body.classList.toggle("dark-mode");
-   circulo.classList.toggle("activado");
+const header = document.querySelector("#header");
+const openMenu = document.querySelector("#open-icon");
+const closeMenu = document.getElementById("close-icon");
+const body = document.body;
+
+// Abre el menú al hacer clic en el icono de abrir
+openMenu.addEventListener("click", (event) => {
+    header.classList.toggle("desplazar");
+    
+    // Si se abre el menú, añadir un evento al body
+    if (header.classList.contains('desplazar')) {
+        body.addEventListener("click", closeMenuHandler);
+    }
+
+    // Evitar que el clic en el icono de abrir cierre el menú inmediatamente
+    event.stopPropagation();
 });
 
-//Desplazamiento del nav
-bestiario.addEventListener("click",()=>{
-   navLateral.classList.toggle("min-nav-lateral");
-   main.classList.toggle("min-main")
-   spans.forEach((span)=>{
-       span.classList.toggle("oculto");
-   });
-   
-   bestiario.classList.toggle("rotate");
+// Cierra el menú al hacer clic en el icono de cerrar
+closeMenu.addEventListener("click", (event) => {
+    closeMenuHandler();
+    event.stopPropagation(); // Evitar que el clic se propague al body
 });
 
-/*Menu movil*/
-openMenu.addEventListener("click",()=>{
-   navLateral.classList.toggle("open");
+// Función para manejar el cierre del menú
+function closeMenuHandler() {
+    header.classList.remove("desplazar");
+    body.removeEventListener("click", closeMenuHandler);
+}
+
+// Evitar que el body cierre el menú si se hace clic en el header
+header.addEventListener("click", (event) => {
+    event.stopPropagation();
 });
-
-closeMenu.addEventListener("click",()=>{
-   navLateral.classList.toggle("open");
-});
-
-
-/*if (elemento.classList.contains('open')){
-   document.addEventListener('click', function(event) {
-       const elemen = document.getElementById('elemento');
-       const clicFuera = !elemen.contains(event.target);
-
-       if (clicFuera) {
-           alert('Hiciste clic fuera del elemento!');
-       }
-   });
-}*/
