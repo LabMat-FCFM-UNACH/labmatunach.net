@@ -151,8 +151,8 @@ dots.forEach((li, key) => {
 });
 
 // Función para crear el nombre del archivo de imagen
-function generarNombreImagen(dia, mes, año) {
-    return `${dia}_${mes}_${año}`; // O .jpeg, depende de tu formato
+function generarNombreImagen(num) {
+    return `${num}`; // O .jpeg, depende de tu formato
 }
 
 // Función para obtener las tres imágenes más recientes
@@ -163,13 +163,14 @@ async function obtenerImagenesRecientes() {
     let dia = fechaActual.getDate();
     let mes = fechaActual.getMonth() + 1;
     let año = fechaActual.getFullYear();
+    let num = 1
 
     while (alts.length < 3) {
-        const nombreImagen = generarNombreImagen(dia, mes, año) + `.png`;
+        const nombreImagen = generarNombreImagen(num) + `.png`;
         const rutaImagen = `Actividades/${nombreImagen}`;
-        const nombreEnlace = generarNombreImagen(dia, mes, año) + `.txt`;
+        const nombreEnlace = generarNombreImagen(num) + `.txt`;
         const rutaEnlace = `Actividades/${nombreEnlace}`;
-        const nombreAlt = generarNombreImagen(dia, mes, año) + `_alt.txt`;
+        const nombreAlt = generarNombreImagen(num) + `_alt.txt`;
         const rutaAlt = `Actividades/${nombreAlt}`;
 
         try {
@@ -195,22 +196,15 @@ async function obtenerImagenesRecientes() {
             }
 
         } catch (error) {
-            console.log(`Error al obtener datos para la fecha: ${dia}/${mes}/${año}`);
+            console.log(`Error al obtener los datos`);
         }
 
         // Restar un día y ajustar mes y año si es necesario
-        dia--;
-        if (dia === 0) {
-            mes--;
-            if (mes === 0) {
-                mes = 12;
-                año--;
-            }
-            dia = new Date(año, mes, 0).getDate(); // Último día del mes anterior
-        }
+        num += 1;
     }
     return { imagenes, enlaces, alts };
 }
+
 
 // Función para cargar y mostrar las imágenes en el slider
 async function cargarImagenesEnSlider() {
