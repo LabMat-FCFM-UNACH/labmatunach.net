@@ -1,108 +1,308 @@
 <!DOCTYPE html>
 <head>
-   <meta charset="UTF-8">
-   <title>Laboratorio de matemáticas</title>
-   <link rel="icon" href="LamatIcon.png" type="image/png">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="style.css" />
-   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <title>Laboratorio de matemáticas</title>
+  <link rel="icon" href="LamatIcon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-   <div class="header__movil">
-      <ion-icon id="open-icon" name="grid-outline"></ion-icon>
-   </div>
-   <header id="header">
-      <div>       
-         <ion-icon id="close-icon" name="close-outline"></ion-icon>
-         <div><a href="index.html"><img src="LamatGEn.png"></a></div>      
-         <ul>      
-            <li class="ubicacion">
-               <a href="index.html"><ion-icon name="home-outline"></ion-icon><b>Inicio</b></a>
-            </li>      
-            <li>
-               <a href="ejemplos.html"><ion-icon name="book-outline"></ion-icon><b>Ejemplos</b></a>
-            </li>     
-            <li>
-               <a href="galeria.html"><ion-icon name="images-outline"></ion-icon><b>Galería</b></a>
-            </li>
-            <li>
-               <a href="contacto.html"><ion-icon name="people-outline"></ion-icon><b>Contacto</b></a>
-            </li>      
-         </ul>
+  <div class="header__movil">
+    <ion-icon id="open-icon" name="grid-outline"></ion-icon>
+  </div>
+  <header id="header">
+    <div>
+      <ion-icon id="close-icon" name="close-outline"></ion-icon>
+      <div>
+        <a href="index.html"><img src="LamatGEn.png" /></a>
       </div>
-      <div class="logos">
-         <a href="https://www.fcfm.unach.mx"><img src="logo fcfm.png"></a>
-         <a href="../index.html"><img src="Laboratorio de matemáticas no fondo.png"></a>
+      <ul>
+        <li class="ubicacion">
+          <a href="index.html"
+            ><ion-icon name="home-outline"></ion-icon><b>Inicio</b></a
+          >
+        </li>
+        <li>
+          <a href="ejemplos.html"
+            ><ion-icon name="book-outline"></ion-icon><b>Ejemplos</b></a
+          >
+        </li>
+        <li>
+          <a href="galeria.html"
+            ><ion-icon name="images-outline"></ion-icon><b>Galería</b></a
+          >
+        </li>
+        <li>
+          <a href="contacto.html"
+            ><ion-icon name="people-outline"></ion-icon><b>Contacto</b></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="logos">
+      <a href="https://www.fcfm.unach.mx"><img src="logo fcfm.png" /></a>
+      <a href="../index.html"
+        ><img src="Laboratorio de matemáticas no fondo.png"
+      /></a>
+    </div>
+  </header>
+  <div class="Articulo">
+    <main>
+      <h1>LamatGen v1.2.0</h1>
+      <p>
+        LamatGen es un repositorio capaz de generar modelos 3D de curvas y
+        superficies a partir de una parametrización en una variable. Otorga
+        además herramientas de resolución de sistemas de ecuaciones
+        diferenciales e interpolación de datos para crear curvas a partir de
+        modelos de EDO o de un conjunto de pocos datos. El repositorio está
+        programado en C++ y es de libre acceso para cualquier persona que lo
+        requiera. Además, LamatGen está optimizado para crear modelos
+        compatibles con laminadores para impresión 3D como Prusa Slicer y
+        Ultimaker Cura.
+      </p>
+      <h2>Instalación</h2>
+      <p>Basta con clonar el repositorio desde una terminal a partir de:</p>
+      <!-- From Uiverse.io by ilkhoeri -->
+      <div class="card">
+        <div class="wrap">
+          <div class="terminal">
+            <hgroup class="head">
+              <p class="title">
+                <svg
+                  width="16px"
+                  height="16px"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                >
+                  <path
+                    d="M7 15L10 12L7 9M13 15H17M7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V7.8C21 6.11984 21 5.27976 20.673 4.63803C20.3854 4.07354 19.9265 3.6146 19.362 3.32698C18.7202 3 17.8802 3 16.2 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21Z"
+                  ></path>
+                </svg>
+                Terminal
+              </p>
+
+              <button class="copy_toggle" tabindex="-1" type="button">
+                <svg
+                  width="16px"
+                  height="16px"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                >
+                  <path
+                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
+                  ></path>
+                  <path
+                    d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+                  ></path>
+                </svg>
+              </button>
+            </hgroup>
+
+            <div class="body">
+              <pre class="pre">          <code>-&nbsp;</code>
+           <code>$ git clone&nbsp;</code>
+           <code class="cmd" data-cmd="https://github.com/LabMat-FCFM-UNACH/lamatgen"></code>
+         </pre>
+            </div>
+          </div>
+        </div>
       </div>
-   </header>
-   <div class="Articulo">
-      <main>
-         <h1>LamatGen v1.2.0</h1>
-         <p>LamatGen es un repositorio capaz de generar modelos 3D de curvas y superficies a partir de una parametrización en una variable. Otorga además herramientas de resolución de sistemas de ecuaciones diferenciales e interpolación de datos para crear curvas a partir de modelos de EDO o de un conjunto de pocos datos. El repositorio está programado en C++ y es de libre acceso para cualquier persona que lo requiera. Además, LamatGen está optimizado para crear modelos compatibles con laminadores para impresión 3D como Prusa Slicer y Ultimaker Cura. </p>
-         <h2>Instalación</h2>
-         <p>Basta con clonar el repositorio desde una terminal a partir de:</p>
-         <div class="box__github">
-            <code>$ git clone https://github.com/LabMat-FCFM-UNACH/lamatgen</code>
-         </div>
-         <p>o bien descargar el reposito desde nuestro <a href="https://github.com/LabMat-FCFM-UNACH/lamatgen">github</a></p>
-         <h2>Novedades de la versión</h2>
-         <h3>3/12/24 Versión 1.2.0</h3>
-         <ul>
-            <li><p>Optimizado el proceso de creación de archivo reduciendo significativamente el tiempo de renderizado.</p></li>
-            <li><p>Implementado un sistema de detección y eliminación de puntos idénticos consecutivos que puedan causar errores en la construcción del modelo.</p></li>
-            <li><p>Las herramientas de apoyo al usuario se han implementado en clases de trabajo específicas para importar solo lo necesario.</p></li>
-            <li><p>Implemetada la clase lametnum que contiene entre sus funciones métodos numéricos para el cálculo de objetos, por el momento solamente contiene el método de solución de sistemas de ecuaciones diferenciales por Runge Kutta de cuarto orden.</p></li>
-            <li><p>Agregada la clase lamatools que otorga al usuario herramientas que facilitan las operaciones vectoriales como el producto punto, el productro cruz, rotaciones, normas, etc.</p></li>
-            <li><p>Implementada la clase Default Solids que permite al usuario generar objetos por defecto sin tener que generar la parametrización, hasta el momento se han implimentado construicciones de caminantes aleatorios con fronteras cúbicas y esféricas.</p></li>
-         </ul>
-         <h3>5/04/24 Versión 1.1.0</h3>
-         <ul>
-            <li><p>Optimizado el proceso de creación del archivo disminuyendo el tiempo de creación del archivo alrededor del 50%.</p></li>
-            <li><p>Optimizado el proceso de búsqueda de puntos consecutivos.</p></li>
-         </ul>
-         <h3>2/04/24 Versión 1.0.0</h3>
-         <ul>
-            <li><p>Posibilidad de crear modelos 3D de curvas paramétricas compatibles con Prusa Slicer y Ultimaker Cura (la parametrización necesita partir de una lista de puntos en R3 para funcionar).</p></li>
-            <li><p>Añadida una interfaz de usuario para la terminal.</p></li>
-            <li><p>Añadida detección de puntos consecutivos que puedan causar irregularidades con la curva.</p></li>
-            <li><p>Repositorio disponible en Python y C++. (Buscando utilizar otros lenguajes para el cálculo más eficaz de proyectos, por cuestiones de amigabilidad con el usuario se mantiene el repositorio en versiones para ambos lenguajes).</p></li>
-            <li><p>Añadidas advertencias para modelos de más de un millón de triángulos (una cantidad de triángulos exagerada de triángulos puede causar problemas de rendimiento y procesado en equipos de baja potencia).</p></li>
-            <li><p>Añadido método de Runge Kutta en cuarto orden para ara resolución de sistemas de ecuaciones diferenciales ordinarias con condiciones iniciales.</p></li>
-         </ul>
-      </main>
-      <footer>
-         <div>
-            <span>
-              <p>Carretera Emiliano Zapata km 8.0, Rancho San Francisco, Ciudad Universitaria, Terán,<br>
-              Tuxtla Gutiérrez, Chiapas, 29050</p>
-            </span>
-            <ul class="redes-sociales">
-               <li>
-                  <a href="https://www.facebook.com/profile.php?id=61565087828440">
-                     <ion-icon class="logo-facebook" name="logo-facebook"></ion-icon>
-                  </a>
-               </li>
-               <li>
-                  <a href="https://www.instagram.com/labmat.fcfm.unach?igsh=b3d5MXRpZHRnNGk=">
-                     <ion-icon class="logo-instagram" name="logo-instagram"></ion-icon>
-                  </a>
-               </li>
-               <li>
-                  <a href="https://github.com/LabMat-FCFM-UNACH">
-                     <ion-icon class="logo-github" name="logo-github"></ion-icon>
-                  </a>
-               </li>
-            </ul>
-         </div>
-         <div>
-            <img src="universidad.png" style="width:100%">
-         </div>
-      </footer>
-   </div>
-   
-   <script src="script.js"></script>
-   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <p>
+        o bien descargar el reposito desde nuestro
+        <a href="https://github.com/LabMat-FCFM-UNACH/lamatgen">github</a>
+      </p>
+      <h2>Novedades de la versión</h2>
+      <h3>3/12/24 Versión 1.2.0</h3>
+      <ul>
+        <li>
+          <p>
+            Optimizado el proceso de creación de archivo reduciendo
+            significativamente el tiempo de renderizado.
+          </p>
+        </li>
+        <li>
+          <p>
+            Implementado un sistema de detección y eliminación de puntos
+            idénticos consecutivos que puedan causar errores en la construcción
+            del modelo.
+          </p>
+        </li>
+        <li>
+          <p>
+            Las herramientas de apoyo al usuario se han implementado en clases
+            de trabajo específicas para importar solo lo necesario.
+          </p>
+        </li>
+        <li>
+          <p>
+            Implemetada la clase lametnum que contiene entre sus funciones
+            métodos numéricos para el cálculo de objetos, por el momento
+            solamente contiene el método de solución de sistemas de ecuaciones
+            diferenciales por Runge Kutta de cuarto orden.
+          </p>
+        </li>
+        <li>
+          <p>
+            Agregada la clase lamatools que otorga al usuario herramientas que
+            facilitan las operaciones vectoriales como el producto punto, el
+            productro cruz, rotaciones, normas, etc.
+          </p>
+        </li>
+        <li>
+          <p>
+            Implementada la clase Default Solids que permite al usuario generar
+            objetos por defecto sin tener que generar la parametrización, hasta
+            el momento se han implimentado construicciones de caminantes
+            aleatorios con fronteras cúbicas y esféricas.
+          </p>
+        </li>
+      </ul>
+      <h3>5/04/24 Versión 1.1.0</h3>
+      <ul>
+        <li>
+          <p>
+            Optimizado el proceso de creación del archivo disminuyendo el tiempo
+            de creación del archivo alrededor del 50%.
+          </p>
+        </li>
+        <li>
+          <p>Optimizado el proceso de búsqueda de puntos consecutivos.</p>
+        </li>
+      </ul>
+      <h3>2/04/24 Versión 1.0.0</h3>
+      <ul>
+        <li>
+          <p>
+            Posibilidad de crear modelos 3D de curvas paramétricas compatibles
+            con Prusa Slicer y Ultimaker Cura (la parametrización necesita
+            partir de una lista de puntos en R3 para funcionar).
+          </p>
+        </li>
+        <li><p>Añadida una interfaz de usuario para la terminal.</p></li>
+        <li>
+          <p>
+            Añadida detección de puntos consecutivos que puedan causar
+            irregularidades con la curva.
+          </p>
+        </li>
+        <li>
+          <p>
+            Repositorio disponible en Python y C++. (Buscando utilizar otros
+            lenguajes para el cálculo más eficaz de proyectos, por cuestiones de
+            amigabilidad con el usuario se mantiene el repositorio en versiones
+            para ambos lenguajes).
+          </p>
+        </li>
+        <li>
+          <p>
+            Añadidas advertencias para modelos de más de un millón de triángulos
+            (una cantidad de triángulos exagerada de triángulos puede causar
+            problemas de rendimiento y procesado en equipos de baja potencia).
+          </p>
+        </li>
+        <li>
+          <p>
+            Añadido método de Runge Kutta en cuarto orden para ara resolución de
+            sistemas de ecuaciones diferenciales ordinarias con condiciones
+            iniciales.
+          </p>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <div>
+        <span>
+          <p>
+            Carretera Emiliano Zapata km 8.0, Rancho San Francisco, Ciudad
+            Universitaria, Terán,<br />
+            Tuxtla Gutiérrez, Chiapas, 29050
+          </p>
+        </span>
+        <ul class="redes-sociales">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61565087828440">
+              <ion-icon class="logo-facebook" name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/labmat.fcfm.unach?igsh=b3d5MXRpZHRnNGk="
+            >
+              <ion-icon class="logo-instagram" name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/LabMat-FCFM-UNACH">
+              <ion-icon class="logo-github" name="logo-github"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img src="universidad.png" style="width: 100%" />
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const copyButton = document.querySelector(".copy_toggle");
+      const cmdElement = document.querySelector(".cmd");
+
+      if (copyButton && cmdElement) {
+        copyButton.addEventListener("click", function () {
+          const codeContent = cmdElement.getAttribute("data-cmd");
+
+          if (!navigator.clipboard || !navigator.clipboard.writeText) {
+            alert("Tu navegador no soporta la API del portapapeles.");
+            return;
+          }
+
+          navigator.clipboard
+            .writeText(codeContent)
+            .then(() => {
+              copyButton.style.color = "#0f0"; // Indicar éxito
+              setTimeout(() => {
+                copyButton.style.color = ""; // Restaurar color original
+              }, 5000);
+            })
+            .catch((err) => {
+              console.error("Error al copiar:", err);
+              alert("No se pudo copiar el texto. Intenta manualmente.");
+            });
+        });
+      } else {
+        console.error("No se encontró el botón o el texto a copiar.");
+      }
+    });
+  </script>
 </body>
