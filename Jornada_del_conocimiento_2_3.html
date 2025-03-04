@@ -76,22 +76,10 @@
     </nav>
     <main class="main__expo_bienvenida_2024">
         <div class="contenedor__expo">
-            <h1>Jornada del conocimiento 2.3</h1>
-            <div class="linea"></div>
-            <div class="galeria__expo">
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto1.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto2.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto3.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto4.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto5.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto6.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto7.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto8.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto9.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto10.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto11.jpg"></div>
-                <div><img src="Galerias/Jornada del Conocimiento 2.3/foto12.jpg"></div>
-            </div>
+          <h1>Jornada del conocimiento 2.3</h1>
+          <div class="linea"></div>
+          <div class="galeria__expo" id="galeria">
+          </div>
         </div>
     </main>
     <footer>
@@ -113,6 +101,24 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script _1.js"></script>
+    <script>
+        function cargarGaleria() {
+          const contenedor = document.getElementById("galeria");
+          const rutaBase = "Galerias/Jornada del Conocimiento 2.3/foto";
+          const totalFotos = 12;
+  
+          for (let i = 1; i <= totalFotos; i++) {
+            const div = document.createElement("div");
+            const img = document.createElement("img");
+            img.src = `${rutaBase}${i}.webp`;
+            img.alt = `Foto ${i}`;
+            div.appendChild(img);
+            contenedor.appendChild(div);
+          }
+        }
+  
+        document.addEventListener("DOMContentLoaded", cargarGaleria);
+      </script>
     </body>
 </html>
 

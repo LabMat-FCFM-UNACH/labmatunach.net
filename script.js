@@ -166,7 +166,7 @@ async function obtenerImagenesRecientes() {
     let num = 1
 
     while (alts.length < 3) {
-        const nombreImagen = generarNombreImagen(num) + `.png`;
+        const nombreImagen = generarNombreImagen(num) + `.webp`;
         const rutaImagen = `Actividades/${nombreImagen}`;
         const nombreEnlace = generarNombreImagen(num) + `.txt`;
         const rutaEnlace = `Actividades/${nombreEnlace}`;
