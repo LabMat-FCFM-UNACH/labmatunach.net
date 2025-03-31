@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Laboratorio de matemáticas</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="LabMatIco.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <header>
+        <div class="fcfm"><a href="https://www.fcfm.unach.mx/"><img src="logo fcfm.png"></a></div>
+        <div class="labmat"><a href="index.html"><img src="header__movil.jpeg" alt="Laboratorio de matemáticas"></a></div>
+    </header>
+    <nav>
+        <div class="header__movil">
+            <div class="logos">
+                <div class="fcfm__movil"><a href="https://www.fcfm.unach.mx/"><img src="logo fcfm.png"></a></div>
+                <div class="labmat__movil"><a href="index.html"><img src="header__movil.jpeg" alt="Laboratorio de matemáticas"></a></div>
+            </div>
+            <div class="icon-open"><ion-icon id="open" name="menu-outline"></ion-icon></div>
+        </div>
+        <ul class="navegador">
+            <ion-icon id="close" name="close-outline"></ion-icon>
+            <li>
+                <a href="index.html">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span>INICIO</span>
+                </a>
+            </li>
+            <li>
+                <div class="nav__item">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span>NOSOTROS</span>
+                    <ion-icon id="flecha" name="caret-down-outline"></ion-icon>
+                </div>
+                <ul class="menu__contextual">
+                    <li>
+                        <a href="equipo.html">
+                            <ion-icon name="people-circle-outline"></ion-icon>
+                            <span>Equipo</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="eventos.html">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <span>Eventos</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="nav__item-1">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                    <span>NUESTRO TRABAJO</span>
+                    <ion-icon id="flecha-1" name="caret-down-outline"></ion-icon>
+                </div>
+                <ul class="menu__contextual-1">
+                    <li>
+                        <a href="LamatGenv1.2.15/index.html">
+                            <ion-icon name="flask-outline"></ion-icon>
+                            <span>LamatGet</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="contacto.html">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>CONTACTO</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="main__expo_bienvenida_2024">
+        <div class="contenedor__expo">
+          <h1>6ta Feria de Ciencias FCFM</h1>
+          <div class="linea"></div>
+          <div class="galeria__expo" id="galeria">
+          </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <span>
+                Carretera Emiliano Zapata km 8.0, Rancho San Francisco, Ciudad Universitaria, Terán,<br>
+                Tuxtla Gutiérrez, Chiapas, 29050
+            </span>
+            <ul class="redes-sociales">
+                <li><a href="https://www.facebook.com/profile.php?id=61565087828440"><ion-icon class="logo-facebook" name="logo-facebook"></ion-icon></a></li>
+                <li><a href="https://www.instagram.com/labmat.fcfm.unach?igsh=b3d5MXRpZHRnNGk="><ion-icon class="logo-instagram" name="logo-instagram"></ion-icon></a></li>
+                <li><a href="https://github.com/LabMat-FCFM-UNACH"><ion-icon class="logo-github" name="logo-github"></ion-icon></a></li>
+            </ul>
+        </div>
+        <div>
+            <img src="universidad.png" style="width:100%">
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script _1.js"></script>
+    <script>
+        function cargarGaleria() {
+          const contenedor = document.getElementById("galeria");
+          const rutaBase = "Galerias/6_feria_de_ciencias/foto";
+          const totalFotos = 13;
+      
+          for (let i = 1; i <= totalFotos; i++) {
+            const div = document.createElement("div");
+            const img = document.createElement("img");
+            img.src = `${rutaBase}${i}.webp`;
+            img.alt = `Foto ${i}`;
+            img.loading = "lazy"; // Carga diferida
+            div.appendChild(img);
+            contenedor.appendChild(div);
+          }
+        }
+      
+        document.addEventListener("DOMContentLoaded", cargarGaleria);
+      </script>
+      
+    </body>
+</html>
+
